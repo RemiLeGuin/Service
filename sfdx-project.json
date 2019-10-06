@@ -1,0 +1,34 @@
+{
+    "packageDirectories": [
+        {
+            "path": "service",
+            "default": true,
+            "package": "Service",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "dependencies": [
+                {
+                    "package": "Trigger Dependency Injection (TDI)",
+                    "versionNumber": "1.0.0.LATEST"
+                },
+                {
+                    "package": "Core",
+                    "versionNumber": "0.1.0.LATEST"
+                }
+            ]
+        },
+        {
+            "path": "uncovered",
+            "default": false
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "46.0",
+    "packageAliases": {
+        "TDF": "04t1n0000021jWVAAY",
+        "Trigger Dependency Injection (TDI)": "0Ho3X000000KyjQSAS",
+        "Core": "0Ho3X000000KyjVSAS",
+        "Service": "0Ho3X000000KyjaSAC"
+    }
+}

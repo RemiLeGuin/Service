@@ -1,0 +1,74 @@
+#Safelist. The CI job will run only for the folowing branches.
+branches:
+  only:
+  - dev
+
+#Gives permission to install Salesforce CLI
+sudo: true
+
+before_install:
+#
+# The before_install steps downloads Salesforce CLI and installs it
+#
+
+#Assign variables
+- export CLIURL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+#Create SFDX directory
+- mkdir sfdx
+#Install Salesforce CLI
+- wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
+- "./sfdx/install"
+- export PATH=./sfdx/$(pwd):$PATH
+
+before_script:
+#
+# The before_script step initializes variables used in the script step and authenticates to the Dev Hub using the JWT-based flow
+#
+
+#Assign variables
+- export TESTLEVEL=RunLocalTests
+#Be sure to update the package ID (package ID starts with OHo) or package alias here from the sfdx-project.json file
+- export PACKAGENAMETDF="04t1n0000021jWVAAY"
+- export PACKAGEVERSIONTDF="04t1n0000021jWVAAY"
+- export PACKAGENAMETDI="0Ho3X000000KyjQSAS"
+- export PACKAGEVERSIONTDI="04t3X000001FDA6QAO"
+- export PACKAGENAMECORE="0Ho3X000000KyjVSAS"
+- export PACKAGEVERSIONCORE="04t3X000001FDQhQAO"
+- export PACKAGENAMESERVICE="0Ho3X000000KyjaSAC"
+- export PACKAGEVERSIONSERVICE=""
+#outputs CLI version
+- sfdx --version
+#outputs salsforcedx plugin version
+- sfdx plugins --core
+#Authorizes Dev Hub
+- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
+  --username $USERNAME --setdefaultdevhubusername --setalias Service
+
+script:
+#Creates scratch org
+- sfdx force:org:create --targetdevhubusername Service --setdefaultusername
+  --definitionfile config/project-scratch-def.json --setalias ciorg --wait 10 --durationdays 1
+- sfdx force:org:display --targetusername ciorg
+#Installs packages in scratch org
+- sfdx force:package:install --package $PACKAGEVERSIONTDF --targetusername ciorg
+- sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection --targetusername ciorg
+- echo "Waiting for 5 minutes for TDI package availability"
+- sleep 5m
+- sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --targetusername ciorg
+- echo "Waiting for 5 minutes for Core package availability"
+- sleep 5m
+#Pushes source to scratch org
+- sfdx force:source:push --targetusername ciorg
+#Runs unit tests on scratch org
+- sfdx force:apex:test:run --targetusername ciorg --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
+#Deletes scratch org
+- sfdx force:org:delete --targetusername ciorg --noprompt
+#Creates package version
+- PACKAGEVERSIONSERVICE="$(sfdx force:package:version:create --package $PACKAGENAMESERVICE --installationkey Service2019
+  --wait 20 --json --targetdevhubusername Service | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+- echo "Package Version Id - "${PACKAGEVERSIONSERVICE}
+#Installs package in target org
+- sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019
+  --publishwait 10 --wait 10 --targetusername Service
+#Runs unit tests on target org
+- sfdx force:apex:test:run --targetusername Service --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL

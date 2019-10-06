@@ -1,0 +1,160 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef1"
+            },
+            "AccountId": "@AccountRef1",
+            "Contract__c": "@ContractRef1",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 1 Account 1 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef2"
+            },
+            "AccountId": "@AccountRef2",
+            "Contract__c": "@ContractRef2",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 1 Account 2 Other"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef3"
+            },
+            "AccountId": "@AccountRef3",
+            "Contract__c": "@ContractRef3",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 1 Account 3 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef4"
+            },
+            "AccountId": "@AccountRef3",
+            "Contract__c": "@ContractRef4",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 1 Account 3 Other"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef5"
+            },
+            "AccountId": "@AccountRef4",
+            "Contract__c": "@ContractRef5",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 2 Account 1 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef6"
+            },
+            "AccountId": "@AccountRef5",
+            "Contract__c": "@ContractRef6",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 2 Account 2 Other"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef7"
+            },
+            "AccountId": "@AccountRef6",
+            "Contract__c": "@ContractRef7",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 2 Account 3 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef8"
+            },
+            "AccountId": "@AccountRef6",
+            "Contract__c": "@ContractRef8",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 2 Account 3 Other"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef9"
+            },
+            "AccountId": "@AccountRef7",
+            "Contract__c": "@ContractRef9",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 3 Account 1 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef10"
+            },
+            "AccountId": "@AccountRef8",
+            "Contract__c": "@ContractRef10",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 3 Account 2 Other"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef11"
+            },
+            "AccountId": "@AccountRef9",
+            "Contract__c": "@ContractRef11",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 3 Account 3 F2ML"
+        },
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef12"
+            },
+            "AccountId": "@AccountRef9",
+            "Contract__c": "@ContractRef12",
+            "Origin": "Email",
+            "Priority": "Low",
+            "RecordTypeId": "0121j000000JxEFAA0",
+            "Status": "New",
+            "Subject": "Public Deals Agent 3 Account 3 Other"
+        }
+    ]
+}

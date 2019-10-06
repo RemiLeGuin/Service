@@ -1,0 +1,73 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef1"
+            },
+            "Name": "Major Accounts Agent 1 Account 1",
+            "Products__c": "Free 2 Move Lease;"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef2"
+            },
+            "Name": "Major Accounts Agent 1 Account 2"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef3"
+            },
+            "Name": "Major Accounts Agent 1 Account 3",
+            "Products__c": "Free 2 Move Lease;"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef4"
+            },
+            "Name": "Major Accounts Agent 2 Account 1",
+            "Products__c": "Free 2 Move Lease;"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef5"
+            },
+            "Name": "Major Accounts Agent 2 Account 2"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef6"
+            },
+            "Name": "Major Accounts Agent 2 Account 3",
+            "Products__c": "Free 2 Move Lease;"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef7"
+            },
+            "Name": "Major Accounts Agent 3 Account 1",
+            "Products__c": "Free 2 Move Lease;"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef8"
+            },
+            "Name": "Major Accounts Agent 3 Account 2"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef9"
+            },
+            "Name": "Major Accounts Agent 3 Account 3",
+            "Products__c": "Free 2 Move Lease;"
+        }
+    ]
+}

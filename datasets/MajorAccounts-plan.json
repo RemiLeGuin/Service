@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "MajorAccounts-Accounts.json"
+        ]
+    },
+    {
+        "sobject": "Contract",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": [
+            "MajorAccounts-Contracts.json"
+        ]
+    },
+    {
+        "sobject": "Case",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "MajorAccounts-Cases.json"
+        ]
+    }
+]

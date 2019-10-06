@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Restitutions-Accounts.json"
+        ]
+    },
+    {
+        "sobject": "Contract",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": [
+            "Restitutions-Contracts.json"
+        ]
+    },
+    {
+        "sobject": "Case",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "Restitutions-Cases.json"
+        ]
+    }
+]

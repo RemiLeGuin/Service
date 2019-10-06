@@ -1,0 +1,26 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "PublicDeals-Accounts.json"
+        ]
+    },
+    {
+        "sobject": "Contract",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": [
+            "PublicDeals-Contracts.json"
+        ]
+    },
+    {
+        "sobject": "Case",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "PublicDeals-Cases.json"
+        ]
+    }
+]
