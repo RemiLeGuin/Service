@@ -1,1 +1,1 @@
-sfdx force:data:tree:import --plan datasets/MajorAccounts-plan.json -u F2MLSO
+sfdx force:data:tree:import --plan datasets/MajorAccounts-plan.json -u ServiceSO
