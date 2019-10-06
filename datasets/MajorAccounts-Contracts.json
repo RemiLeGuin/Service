@@ -7,7 +7,7 @@
             },
             "AccountId": "@AccountRef1",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },
@@ -29,7 +29,7 @@
             },
             "AccountId": "@AccountRef3",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },
@@ -51,7 +51,7 @@
             },
             "AccountId": "@AccountRef4",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },
@@ -73,7 +73,7 @@
             },
             "AccountId": "@AccountRef6",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },
@@ -95,7 +95,7 @@
             },
             "AccountId": "@AccountRef7",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },
@@ -117,7 +117,7 @@
             },
             "AccountId": "@AccountRef9",
             "ContractTerm": 12,
-            "Product__c": "Free 2 Move Lease",
+            "Product__c": "Service",
             "StartDate": "2019-09-19",
             "Status": "Draft"
         },

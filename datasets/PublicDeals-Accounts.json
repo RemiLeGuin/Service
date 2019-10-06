@@ -6,7 +6,7 @@
                 "referenceId": "AccountRef1"
             },
             "Name": "Public Deals Agent 1 Account 1",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         },
         {
             "attributes": {
@@ -21,7 +21,7 @@
                 "referenceId": "AccountRef3"
             },
             "Name": "Public Deals Agent 1 Account 3",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         },
         {
             "attributes": {
@@ -29,7 +29,7 @@
                 "referenceId": "AccountRef4"
             },
             "Name": "Public Deals Agent 2 Account 1",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         },
         {
             "attributes": {
@@ -44,7 +44,7 @@
                 "referenceId": "AccountRef6"
             },
             "Name": "Public Deals Agent 2 Account 3",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         },
         {
             "attributes": {
@@ -52,7 +52,7 @@
                 "referenceId": "AccountRef7"
             },
             "Name": "Public Deals Agent 3 Account 1",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         },
         {
             "attributes": {
@@ -67,7 +67,7 @@
                 "referenceId": "AccountRef9"
             },
             "Name": "Public Deals Agent 3 Account 3",
-            "Products__c": "Free 2 Move Lease;"
+            "Products__c": "Service;"
         }
     ]
 }

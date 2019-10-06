@@ -9,9 +9,9 @@
             "Contract__c": "@ContractRef1",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 1 Account 1 F2ML"
+            "Subject": "Services Agent 1 Account 1 Service"
         },
         {
             "attributes": {
@@ -22,7 +22,7 @@
             "Contract__c": "@ContractRef2",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 1 Account 2 Other"
         },
@@ -35,9 +35,9 @@
             "Contract__c": "@ContractRef3",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 1 Account 3 F2ML"
+            "Subject": "Services Agent 1 Account 3 Service"
         },
         {
             "attributes": {
@@ -48,7 +48,7 @@
             "Contract__c": "@ContractRef4",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 1 Account 3 Other"
         },
@@ -61,9 +61,9 @@
             "Contract__c": "@ContractRef5",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 2 Account 1 F2ML"
+            "Subject": "Services Agent 2 Account 1 Service"
         },
         {
             "attributes": {
@@ -74,7 +74,7 @@
             "Contract__c": "@ContractRef6",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 2 Account 2 Other"
         },
@@ -87,9 +87,9 @@
             "Contract__c": "@ContractRef7",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 2 Account 3 F2ML"
+            "Subject": "Services Agent 2 Account 3 Service"
         },
         {
             "attributes": {
@@ -100,7 +100,7 @@
             "Contract__c": "@ContractRef8",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 2 Account 3 Other"
         },
@@ -113,9 +113,9 @@
             "Contract__c": "@ContractRef9",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 3 Account 1 F2ML"
+            "Subject": "Services Agent 3 Account 1 Service"
         },
         {
             "attributes": {
@@ -126,7 +126,7 @@
             "Contract__c": "@ContractRef10",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 3 Account 2 Other"
         },
@@ -139,9 +139,9 @@
             "Contract__c": "@ContractRef11",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
-            "Subject": "Services Agent 3 Account 3 F2ML"
+            "Subject": "Services Agent 3 Account 3 Service"
         },
         {
             "attributes": {
@@ -152,7 +152,7 @@
             "Contract__c": "@ContractRef12",
             "Origin": "Email",
             "Priority": "High",
-            "RecordTypeId": "0121j000000JxEHAA0",
+            "RecordTypeId": "0120E000001Y02FQAS",
             "Status": "New",
             "Subject": "Services Agent 3 Account 3 Other"
         }
