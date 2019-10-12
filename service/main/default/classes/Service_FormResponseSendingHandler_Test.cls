@@ -1,3 +1,1 @@
-public class Service_FormResponseSendingHandler_Test {
-
-}
+public class Service_FormResponseSendingHandler_Test {}
