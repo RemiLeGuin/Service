@@ -12,14 +12,14 @@ public with sharing class Service_FormResponseSendingUtilities {
     }
 
     /**
-    * @description Get form sending decision according to email addresses.
-    * @return A map of Booleans stating for sending by email address.
+    * @description Get form sending decision according to queue.
+    * @return A map of Booleans stating for sending by queue developer name.
     */
-    public static Map<String, Boolean> getSendFormsByQueue() {
+    private static Map<String, Boolean> getSendFormsByQueue() {
         Map<String,Boolean> sendFormsByQueue = new Map<String, Boolean> ();
-        for (FormResponseSending__mdt formResponseSending : [SELECT EmailAddress__c, SendForm__c
+        for (FormResponseSending__mdt formResponseSending : [SELECT QueueDeveloperName__c, SendForm__c
                                                              FROM FormResponseSending__mdt]) {
-            SENDFORMSBYQUEUE.put(formResponseSending.EmailAddress__c, formResponseSending.SendForm__c);
+            SENDFORMSBYQUEUE.put(formResponseSending.QueueDeveloperName__c, formResponseSending.SendForm__c);
         }
         return sendFormsByQueue;
     }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>EmailAddress__c</fullName>
-    <caseSensitive>true</caseSensitive>
-    <description>Email address the client wrote to.</description>
+    <fullName>QueueDeveloperName__c</fullName>
+    <description>Developer Name of the Queue for which a form should be sent by email.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
-    <label>Email Address</label>
+    <label>Queue Developer Name</label>
     <required>true</required>
     <type>Email</type>
-    <unique>true</unique>
+    <unique>false</unique>
 </CustomField>
