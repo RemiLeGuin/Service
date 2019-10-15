@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SendForm__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <complianceGroup>RGPD</complianceGroup>
     <defaultValue>false</defaultValue>
     <description>Determines whether to send the form or not.</description>
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <label>Send Form</label>
+    <securityClassification>Internal</securityClassification>
     <type>Checkbox</type>
 </CustomField>

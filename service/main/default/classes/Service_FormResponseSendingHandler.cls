@@ -18,7 +18,10 @@ public with sharing class Service_FormResponseSendingHandler implements Callable
                 && (cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_MAJORACCOUNTS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
-                    || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {}
+                    || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
+                String caseQueueDeveloperName = Service_CaseUtilities.QUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
+                cs.SendForm__c = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE.get(caseQueueDeveloperName);
+            }
         }
         return 'Method executed: Service_FormResponseSendingHandler.setSendForm';
     }

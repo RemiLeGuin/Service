@@ -16,7 +16,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>EmailAddress__c</field>
+                <field>QueueDeveloperName__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

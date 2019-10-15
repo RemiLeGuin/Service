@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SendForm__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <complianceGroup>RGPD</complianceGroup>
     <defaultValue>false</defaultValue>
     <description>Determine whether to automatically send a form to precise the case qualification or not.</description>
     <externalId>false</externalId>
     <label>Send Form</label>
+    <securityClassification>Internal</securityClassification>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -3,8 +3,8 @@
     <label>Restitutions</label>
     <protected>false</protected>
     <values>
-        <field>EmailAddress__c</field>
-        <value xsi:type="xsd:string">restitutions@service.fr</value>
+        <field>QueueDeveloperName__c</field>
+        <value xsi:type="xsd:string">Service_Restitutions</value>
     </values>
     <values>
         <field>SendForm__c</field>
