@@ -14,7 +14,7 @@ public with sharing class Service_FormResponseSendingHandler implements Callable
     */
     private static String setSendForm(List<Case> cases) {
         for (Case cs : cases) {
-            if (cs.OwnerId != null && cs.OwnerId.getSobjectType() == Group.SObjectType
+            if (cs.Origin == 'Email' && cs.OwnerId != null && cs.OwnerId.getSobjectType() == Group.SObjectType
                 && (cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_MAJORACCOUNTS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS

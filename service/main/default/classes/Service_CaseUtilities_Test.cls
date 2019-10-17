@@ -16,14 +16,47 @@ private class Service_CaseUtilities_Test {
         Id recordTypeId_Restitutions = Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS;
         Id recordTypeId_Services = Service_CaseUtilities.RECORDTYPEID_SERVICES;
 
-        System.assertEquals(18, String.valueOf(recordTypeId_MajorAccounts).length(), 'The string is not a 18 character ID');
-        System.assertEquals('012', String.valueOf(recordTypeId_MajorAccounts).left(3), 'The ID does not belong to a Record Type');
-        System.assertEquals(18, String.valueOf(recordTypeId_PublicDeals).length(), 'The string is not a 18 character ID');
-        System.assertEquals('012', String.valueOf(recordTypeId_PublicDeals).left(3), 'The ID does not belong to a Record Type');
-        System.assertEquals(18, String.valueOf(recordTypeId_Restitutions).length(), 'The string is not a 18 character ID');
-        System.assertEquals('012', String.valueOf(recordTypeId_Restitutions).left(3), 'The ID does not belong to a Record Type');
-        System.assertEquals(18, String.valueOf(recordTypeId_Services).length(), 'The string is not a 18 character ID');
-        System.assertEquals('012', String.valueOf(recordTypeId_Services).left(3), 'The ID does not belong to a Record Type');
+        Map<Id, Schema.RecordTypeInfo> caseRecordTypeInfosById = Schema.SObjectType.Case.getRecordTypeInfosById();
+        System.assertEquals('Service_MajorAccounts', caseRecordTypeInfosById.get(recordTypeId_MajorAccounts).getDeveloperName(),
+                            'The ID does not refer to the Service_MajorAccounts record type');
+        System.assertEquals('Service_PublicDeals', caseRecordTypeInfosById.get(recordTypeId_PublicDeals).getDeveloperName(),
+                            'The ID does not refer to the Service_PublicDeals record type');
+        System.assertEquals('Service_Restitutions', caseRecordTypeInfosById.get(recordTypeId_Restitutions).getDeveloperName(),
+                            'The ID does not refer to the Service_Restitutions record type');
+        System.assertEquals('Service_Services', caseRecordTypeInfosById.get(recordTypeId_Services).getDeveloperName(),
+                            'The ID does not refer to the Service_Services record type');
+    }
+
+    /**
+    * @description Test the constant fetching Queues' Developer Name by ID.
+    */
+    @IsTest
+    private static void getQueueDeveloperNamesById_Test() {
+        Map<Id, String> queuesDeveloperNameById = Service_CaseUtilities.QUEUEDEVELOPERNAMESBYID;
+        Map<Id, Group> queuesById = new Map<Id, Group> ([SELECT Id, Type FROM Group WHERE Type = 'Queue']);
+        if (queuesDeveloperNameById != null && !queuesDeveloperNameById.isEmpty()) {
+            for (Id queueId : queuesDeveloperNameById.keySet()) {
+                System.assertEquals('Queue', queuesById.get(queueId).Type, 'The Map ID does not belong to a Queue');
+            }
+        }
+    }
+
+    /**
+    * @description Test the constant fetching Queues' ID by Developer Name.
+    */
+    @IsTest
+    private static void getQueueIdsByDeveloperName_Test() {
+        Map<String, Id> queueIdsByDeveloperName = Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME;
+        Map<String, String> groupTypesByDeveloperName = new Map<String, String> ();
+        for (Group queue : [SELECT DeveloperName, Type FROM Group WHERE Type = 'Queue']) {
+            groupTypesByDeveloperName.put(queue.DeveloperName, queue.Type);
+        }
+        if (queueIdsByDeveloperName != null && !queueIdsByDeveloperName.isEmpty()) {
+            for (String queueDeveloperName : queueIdsByDeveloperName.keySet()) {
+                System.assertEquals('Queue', groupTypesByDeveloperName.get(queueDeveloperName),
+                                    'The ID corresponding to the Map DeveloperName does not belong to a Queue');
+            }
+        }
     }
 
 }

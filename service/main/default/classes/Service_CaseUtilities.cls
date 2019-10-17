@@ -12,14 +12,16 @@ public with sharing class Service_CaseUtilities {
     public static final Id RECORDTYPEID_SERVICES = caseRecordTypeInfosByDeveloperName.get('Service_Services').getRecordTypeId();
 
     public static final Map<Id, String> QUEUEDEVELOPERNAMESBYID;
+    public static final Map<String, Id> QUEUEIDSBYDEVELOPERNAME;
 
     static {
         QUEUEDEVELOPERNAMESBYID = getQueueDeveloperNamesById();
+        QUEUEIDSBYDEVELOPERNAME = getQueueIdsByDeveloperNames();
     }
 
     /**
-    * @description Get queue developer name by ID
-    * @return A map of queue developer name by ID.
+    * @description Get queue developer names by ID.
+    * @return A map of queue developer names by ID.
     */
     private static Map<Id, String> getQueueDeveloperNamesById() {
         Map<Id, String> queueDeveloperNamesById = new Map<Id, String> ();
@@ -27,6 +29,18 @@ public with sharing class Service_CaseUtilities {
             queueDeveloperNamesById.put(queue.Id, queue.DeveloperName);
         }
         return queueDeveloperNamesById;
+    }
+
+    /**
+    * @description Get queue IDs by developer name.
+    * @return A map of queue IDs by developer name.
+    */
+    private static Map<String, Id> getQueueIdsByDeveloperNames() {
+        Map<String, Id> queueIdsByDeveloperNames = new Map<String, Id> ();
+        for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue']) {
+            queueIdsByDeveloperNames.put(queue.DeveloperName, queue.Id);
+        }
+        return queueIdsByDeveloperNames;
     }
 
 }
