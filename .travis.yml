@@ -50,13 +50,13 @@ script:
   --definitionfile config/project-scratch-def.json --setalias ciorg --wait 10 --durationdays 1
 - sfdx force:org:display --targetusername ciorg
 #Installs packages in scratch org
-- sfdx force:package:install --package $PACKAGEVERSIONTDF --targetusername ciorg
+- sfdx force:package:install --package $PACKAGEVERSIONTDF --targetusername ciorg --wait 10 --publishwait 10
 - sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection --targetusername ciorg
-- echo "Waiting for 5 minutes for TDI package availability"
-- sleep 5m
-- sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --targetusername ciorg
-- echo "Waiting for 5 minutes for Core package availability"
-- sleep 5m
+- echo "Waiting for 15 minutes for TDI package availability"
+- sleep 15m
+- sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --targetusername ciorg --wait 10 --publishwait 10
+- echo "Waiting for 15 minutes for Core package availability"
+- sleep 15m
 #Pushes source to scratch org
 - sfdx force:source:push --targetusername ciorg
 #Runs unit tests on scratch org
