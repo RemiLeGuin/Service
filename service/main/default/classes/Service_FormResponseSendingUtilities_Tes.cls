@@ -13,7 +13,7 @@ private class Service_FormResponseSendingUtilities_Tes {
     private static void getSendFormsByQueue_Test() {
         Map<String, Boolean> sendFormsByQueue = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE;
         Map<String, String> queuesByDeveloperName = new Map<String, String> ();
-        for (Group queue : [SELECT DeveloperName, Type FROM Group WHERE Type = 'Queue']) {
+        for (Group queue : [SELECT DeveloperName, Type FROM Group WHERE Type = 'Queue' AND DeveloperName LIKE 'Service_%']) {
             queuesByDeveloperName.put(queue.DeveloperName, queue.Type);
         }
         if (sendFormsByQueue != null && !sendFormsByQueue.isEmpty()) {

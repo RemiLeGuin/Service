@@ -20,25 +20,25 @@ private class Service_FormResponseSendingHandler_Test {
         Test.startTest();
         Caller.bypassAllExcept(new List<String> { 'SetSendFormInsert' }, 'Case');
         List<Case> casesMajorAccounts = TDF.createSObjectList('Case', new Map<String, Object> {
-            'OwnerId' => Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME.get('Service_MajorAccounts'),
+            'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_MajorAccounts'),
             'Priority' => 'Low',
             'Origin' => 'Email',
             'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_MAJORACCOUNTS
         }, 5, true);
         List<Case> casesPublicDeals = TDF.createSObjectList('Case', new Map<String, Object> {
-            'OwnerId' => Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME.get('Service_PublicDeals'),
+            'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_PublicDeals'),
             'Priority' => 'Low',
             'Origin' => 'Email',
             'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
         }, 5, true);
         List<Case> casesRestitutions = TDF.createSObjectList('Case', new Map<String, Object> {
-            'OwnerId' => Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME.get('Service_Restitutions'),
+            'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_Restitutions'),
             'Priority' => 'Low',
             'Origin' => 'Email',
             'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
         }, 5, true);
         List<Case> casesServices = TDF.createSObjectList('Case', new Map<String, Object> {
-            'OwnerId' => Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME.get('Service_Services'),
+            'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_Services'),
             'Priority' => 'Low',
             'Origin' => 'Email',
             'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_SERVICES

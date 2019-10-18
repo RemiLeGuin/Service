@@ -11,36 +11,36 @@ public with sharing class Service_CaseUtilities {
     public static final Id RECORDTYPEID_RESTITUTIONS = caseRecordTypeInfosByDeveloperName.get('Service_Restitutions').getRecordTypeId();
     public static final Id RECORDTYPEID_SERVICES = caseRecordTypeInfosByDeveloperName.get('Service_Services').getRecordTypeId();
 
-    public static final Map<Id, String> QUEUEDEVELOPERNAMESBYID;
-    public static final Map<String, Id> QUEUEIDSBYDEVELOPERNAME;
+    public static final Map<Id, String> SERVICEQUEUEDEVELOPERNAMESBYID;
+    public static final Map<String, Id> SERVICEQUEUEIDSBYDEVELOPERNAME;
 
     static {
-        QUEUEDEVELOPERNAMESBYID = getQueueDeveloperNamesById();
-        QUEUEIDSBYDEVELOPERNAME = getQueueIdsByDeveloperNames();
+        SERVICEQUEUEDEVELOPERNAMESBYID = getServiceQueueDeveloperNamesById();
+        SERVICEQUEUEIDSBYDEVELOPERNAME = getServiceQueueIdsByDeveloperNames();
     }
 
     /**
-    * @description Get queue developer names by ID.
-    * @return A map of queue developer names by ID.
+    * @description Get queue developer names by ID in the Service package.
+    * @return A map of queue developer names by ID in the Service package.
     */
-    private static Map<Id, String> getQueueDeveloperNamesById() {
-        Map<Id, String> queueDeveloperNamesById = new Map<Id, String> ();
-        for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue']) {
-            queueDeveloperNamesById.put(queue.Id, queue.DeveloperName);
+    private static Map<Id, String> getServiceQueueDeveloperNamesById() {
+        Map<Id, String> serviceQueueDeveloperNamesById = new Map<Id, String> ();
+        for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName LIKE 'Service_%']) {
+            serviceQueueDeveloperNamesById.put(queue.Id, queue.DeveloperName);
         }
-        return queueDeveloperNamesById;
+        return serviceQueueDeveloperNamesById;
     }
 
     /**
-    * @description Get queue IDs by developer name.
-    * @return A map of queue IDs by developer name.
+    * @description Get queue IDs by developer name in the Service package.
+    * @return A map of queue IDs by developer name in the Service package.
     */
-    private static Map<String, Id> getQueueIdsByDeveloperNames() {
-        Map<String, Id> queueIdsByDeveloperNames = new Map<String, Id> ();
-        for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue']) {
-            queueIdsByDeveloperNames.put(queue.DeveloperName, queue.Id);
+    private static Map<String, Id> getServiceQueueIdsByDeveloperNames() {
+        Map<String, Id> serviceQueueIdsByDeveloperNames = new Map<String, Id> ();
+        for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName LIKE 'Service_%']) {
+            serviceQueueIdsByDeveloperNames.put(queue.DeveloperName, queue.Id);
         }
-        return queueIdsByDeveloperNames;
+        return serviceQueueIdsByDeveloperNames;
     }
 
 }

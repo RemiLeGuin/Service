@@ -32,7 +32,7 @@ private class Service_CaseUtilities_Test {
     */
     @IsTest
     private static void getQueueDeveloperNamesById_Test() {
-        Map<Id, String> queuesDeveloperNameById = Service_CaseUtilities.QUEUEDEVELOPERNAMESBYID;
+        Map<Id, String> queuesDeveloperNameById = Service_CaseUtilities.SERVICEQUEUEDEVELOPERNAMESBYID;
         Map<Id, Group> queuesById = new Map<Id, Group> ([SELECT Id, Type FROM Group WHERE Type = 'Queue']);
         if (queuesDeveloperNameById != null && !queuesDeveloperNameById.isEmpty()) {
             for (Id queueId : queuesDeveloperNameById.keySet()) {
@@ -46,7 +46,7 @@ private class Service_CaseUtilities_Test {
     */
     @IsTest
     private static void getQueueIdsByDeveloperName_Test() {
-        Map<String, Id> queueIdsByDeveloperName = Service_CaseUtilities.QUEUEIDSBYDEVELOPERNAME;
+        Map<String, Id> queueIdsByDeveloperName = Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME;
         Map<String, String> groupTypesByDeveloperName = new Map<String, String> ();
         for (Group queue : [SELECT DeveloperName, Type FROM Group WHERE Type = 'Queue']) {
             groupTypesByDeveloperName.put(queue.DeveloperName, queue.Type);

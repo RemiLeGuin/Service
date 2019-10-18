@@ -19,7 +19,7 @@ public with sharing class Service_FormResponseSendingHandler implements Callable
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
                     || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
-                String caseQueueDeveloperName = Service_CaseUtilities.QUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
+                String caseQueueDeveloperName = Service_CaseUtilities.SERVICEQUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
                 cs.SendForm__c = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE.get(caseQueueDeveloperName);
             }
         }
