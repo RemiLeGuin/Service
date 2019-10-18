@@ -8,6 +8,9 @@
             "versionNumber": "0.2.0.NEXT",
             "dependencies": [
                 {
+                    "package": "TDF"
+                },
+                {
                     "package": "Trigger Dependency Injection (TDI)",
                     "versionNumber": "1.0.0.LATEST"
                 },
