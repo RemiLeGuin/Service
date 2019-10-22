@@ -13,14 +13,21 @@ public with sharing class Service_FormResponseSendingHandler implements Callable
     * @return A message stating the method execution.
     */
     private static String setSendForm(List<Case> cases) {
-        for (Case cs : cases) {
-            if (cs.Origin == 'Email' && cs.OwnerId != null && cs.OwnerId.getSobjectType() == Group.SObjectType
-                && (cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_MAJORACCOUNTS
-                    || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
-                    || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
-                    || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
-                String caseQueueDeveloperName = Service_CaseUtilities.SERVICEQUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
-                cs.SendForm__c = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE.get(caseQueueDeveloperName);
+        if (Schema.SObjectType.Case.Fields.SendForm__c.isUpdateable()) {
+            for (Case cs : cases) {
+                if (cs.Origin == 'Email' && cs.OwnerId != null && cs.OwnerId.getSobjectType() == Group.SObjectType
+                    && (cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_MAJORACCOUNTS
+                        || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
+                        || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
+                        || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
+                    String caseQueueDeveloperName = Service_CaseUtilities.SERVICEQUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
+                    if (!String.isBlank(caseQueueDeveloperName)) {
+                        Boolean sendForm = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE.get(caseQueueDeveloperName);
+                        if (sendForm != null) {
+                            cs.SendForm__c = sendForm;
+                        }
+                    }
+                }
             }
         }
         return 'Method executed: Service_FormResponseSendingHandler.setSendForm';
