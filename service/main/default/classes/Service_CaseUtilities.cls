@@ -1,8 +1,8 @@
 /**
-* @author Rémi Le Guin
-* @date 10/10/2019
-* @description Utility class for the Case standard object whithin the Service package.
-*/
+ * @author Rémi Le Guin
+ * @date 10/10/2019
+ * @description Utility class for the Case standard object whithin the Service package.
+ */
 public with sharing class Service_CaseUtilities {
 
     public static final Map<String, Schema.RecordTypeInfo> caseRecordTypeInfosByDeveloperName = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName();
@@ -20,9 +20,9 @@ public with sharing class Service_CaseUtilities {
     }
 
     /**
-    * @description Get queue developer names by ID in the Service package.
-    * @return A map of queue developer names by ID in the Service package.
-    */
+     * @description Get queue developer names by ID in the Service package.
+     * @return A map of queue developer names by ID in the Service package.
+     */
     private static Map<Id, String> getServiceQueueDeveloperNamesById() {
         Map<Id, String> serviceQueueDeveloperNamesById = new Map<Id, String> ();
         for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName LIKE 'Service_%']) {
@@ -32,9 +32,9 @@ public with sharing class Service_CaseUtilities {
     }
 
     /**
-    * @description Get queue IDs by developer name in the Service package.
-    * @return A map of queue IDs by developer name in the Service package.
-    */
+     * @description Get queue IDs by developer name in the Service package.
+     * @return A map of queue IDs by developer name in the Service package.
+     */
     private static Map<String, Id> getServiceQueueIdsByDeveloperNames() {
         Map<String, Id> serviceQueueIdsByDeveloperNames = new Map<String, Id> ();
         for (Group queue : [SELECT Id, DeveloperName FROM Group WHERE Type = 'Queue' AND DeveloperName LIKE 'Service_%']) {

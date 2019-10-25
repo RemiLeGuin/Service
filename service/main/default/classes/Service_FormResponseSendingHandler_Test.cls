@@ -1,14 +1,14 @@
 /**
-* @author Rémi Le Guin
-* @date 16/10/2019
-* @description Test class for the handler class for the form response sending on case creation whithin the Service package.
-*/
+ * @author Rémi Le Guin
+ * @date 16/10/2019
+ * @description Test class for the handler class for the form response sending on case creation whithin the Service package.
+ */
 @IsTest
 private class Service_FormResponseSendingHandler_Test {
 
     /**
-    * @description Test the setSendForm method when creating Major Accounts Cases.
-    */
+     * @description Test the setSendForm method when creating Major Accounts Cases.
+     */
     @IsTest
     private static void setSendForm_InsertMajorAccountsCasesTest() {
         Test.startTest();
@@ -28,8 +28,8 @@ private class Service_FormResponseSendingHandler_Test {
     }
 
     /**
-    * @description Test the setSendForm method when creating Public Deals Cases.
-    */
+     * @description Test the setSendForm method when creating Public Deals Cases.
+     */
     @IsTest
     private static void setSendForm_InsertPublicDealsCasesTest() {
         Test.startTest();
@@ -49,8 +49,8 @@ private class Service_FormResponseSendingHandler_Test {
     }
 
     /**
-    * @description Test the setSendForm method when creating Restitutions Cases.
-    */
+     * @description Test the setSendForm method when creating Restitutions Cases.
+     */
     @IsTest
     private static void setSendForm_InsertRestitutionsCasesTest() {
         Test.startTest();
@@ -70,8 +70,8 @@ private class Service_FormResponseSendingHandler_Test {
     }
 
     /**
-    * @description Test the setSendForm method when creating Services Cases.
-    */
+     * @description Test the setSendForm method when creating Services Cases.
+     */
     @IsTest
     private static void setSendForm_InsertServicesCasesTest() {
         Test.startTest();
@@ -91,8 +91,8 @@ private class Service_FormResponseSendingHandler_Test {
     }
 
     /**
-    * @description Test the setSendForm method when creating Service Cases with a user owner.
-    */
+     * @description Test the setSendForm method when creating Service Cases with a user owner.
+     */
     @IsTest
     private static void setSendForm_InsertCasesNotInQueueTest() {
         Test.startTest();
@@ -111,8 +111,8 @@ private class Service_FormResponseSendingHandler_Test {
     }
 
     /**
-    * @description Test the setSendForm method when creating non-Service Cases.
-    */
+     * @description Test the setSendForm method when creating non-Service Cases.
+     */
     @IsTest
     private static void setSendForm_InsertOtherCasesTest() {
         Test.startTest();
@@ -129,6 +129,9 @@ private class Service_FormResponseSendingHandler_Test {
         }
     }
 
+    /**
+     * @description Test the call of a non-existing method.
+     */
     @IsTest
     private static void testNonImplementedMethod() {
         String exceptionThrown;

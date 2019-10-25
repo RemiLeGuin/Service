@@ -1,8 +1,8 @@
 /**
-* @author Rémi Le Guin
-* @date 10/10/2019
-* @description Utility class for the Form Response Sending custom metadata whithin the Service package.
-*/
+ * @author Rémi Le Guin
+ * @date 10/10/2019
+ * @description Utility class for the Form Response Sending custom metadata whithin the Service package.
+ */
 public with sharing class Service_FormResponseSendingUtilities {
 
     public static final Map<String, Boolean> SENDFORMSBYQUEUE;
@@ -12,9 +12,9 @@ public with sharing class Service_FormResponseSendingUtilities {
     }
 
     /**
-    * @description Get form sending decision according to queue.
-    * @return A map of Booleans stating for sending by queue developer name.
-    */
+     * @description Get form sending decision according to queue.
+     * @return A map of Booleans stating for sending by queue developer name.
+     */
     private static Map<String, Boolean> getSendFormsByQueue() {
         Map<String,Boolean> sendFormsByQueue = new Map<String, Boolean> ();
         for (FormResponseSending__mdt formResponseSending : [SELECT QueueDeveloperName__c, SendForm__c
