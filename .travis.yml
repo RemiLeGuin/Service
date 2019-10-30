@@ -60,6 +60,8 @@ script:
 - sleep 9m
 #Pushes source to scratch org
 - sfdx force:source:push --targetusername ciorg
+#Assigns permission sets
+- sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses
 #Runs unit tests on scratch org
 - sfdx force:apex:test:run --targetusername ciorg --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
 #Deletes scratch org
@@ -71,5 +73,7 @@ script:
 #Installs package in target org
 - sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019
   --publishwait 10 --wait 10 --targetusername Service
+#Assigns permission sets
+- sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses
 #Runs unit tests on target org
 - sfdx force:apex:test:run --targetusername Service --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
