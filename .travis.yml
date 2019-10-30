@@ -53,11 +53,7 @@ script:
 - sfdx force:package:install --package $PACKAGEVERSIONTDF --wait 10 --publishwait 10 --targetusername ciorg
 - sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection
   --wait 10 --publishwait 10 --targetusername ciorg
-- echo "Waiting for 9 minutes for TDI package availability"
-- sleep 9m
 - sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ciorg
-- echo "Waiting for 9 minutes for Core package availability"
-- sleep 9m
 #Pushes source to scratch org
 - sfdx force:source:push --targetusername ciorg
 #Assigns permission sets
@@ -74,6 +70,6 @@ script:
 - sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019
   --publishwait 10 --wait 10 --targetusername Service
 #Assigns permission sets
-- sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses
+- sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses --onbehalfof $USERNAME
 #Runs unit tests on target org
 - sfdx force:apex:test:run --targetusername Service --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
