@@ -33,7 +33,7 @@ before_script:
 - export PACKAGENAMETDI="0Ho3X000000KyjQSAS"
 - export PACKAGEVERSIONTDI="04t3X000001FDA6QAO"
 - export PACKAGENAMECORE="0Ho3X000000KyjVSAS"
-- export PACKAGEVERSIONCORE="04t3X000001FDQhQAO"
+- export PACKAGEVERSIONCORE="04t3X000001FgljQAC"
 - export PACKAGENAMESERVICE="0Ho3X000000KyjaSAC"
 - export PACKAGEVERSIONSERVICE=""
 #outputs CLI version
@@ -50,22 +50,21 @@ script:
   --definitionfile config/project-scratch-def.json --setalias ciorg --wait 10 --durationdays 1
 - sfdx force:org:display --targetusername ciorg
 #Installs packages in scratch org
-- sfdx force:package:install --package $PACKAGEVERSIONTDF --targetusername ciorg
-- sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection --targetusername ciorg
-- echo "Waiting for 5 minutes for TDI package availability"
-- sleep 5m
-- sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --targetusername ciorg
-- echo "Waiting for 5 minutes for Core package availability"
-- sleep 5m
+- sfdx force:package:install --package $PACKAGEVERSIONTDF --wait 10 --publishwait 10 --targetusername ciorg
+- sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection
+  --wait 10 --publishwait 10 --targetusername ciorg
+- sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ciorg
 #Pushes source to scratch org
 - sfdx force:source:push --targetusername ciorg
+#Assigns permission sets
+- sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses
 #Runs unit tests on scratch org
 - sfdx force:apex:test:run --targetusername ciorg --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
 #Deletes scratch org
 - sfdx force:org:delete --targetusername ciorg --noprompt
 #Creates package version
 - PACKAGEVERSIONSERVICE="$(sfdx force:package:version:create --package $PACKAGENAMESERVICE --installationkey Service2019
-  --wait 20 --json --targetdevhubusername Service | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
+  --wait 10 --json --targetdevhubusername Service | jq '.result.SubscriberPackageVersionId' | tr -d '"')"
 - echo "Package Version Id - "${PACKAGEVERSIONSERVICE}
 #Installs package in target org
 - sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019

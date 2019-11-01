@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QueueDeveloperName__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <complianceGroup>RGPD</complianceGroup>
+    <description>Developer Name of the Queue for which a form should be sent by email.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Queue Developer Name</label>
+    <length>255</length>
+    <required>true</required>
+    <securityClassification>Internal</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

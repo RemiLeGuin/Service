@@ -1,10 +1,14 @@
 {
     "orgName": "Service",
     "edition": "Developer",
-    "features": [],
+    "language": "en_US",
+    "features": ["ServiceCloud"],
     "settings": {
-        "orgPreferenceSettings": {
-            "s1DesktopEnabled": true
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "userManagementSettings": {
+            "enableNewProfileUI": true
         }
     }
 }

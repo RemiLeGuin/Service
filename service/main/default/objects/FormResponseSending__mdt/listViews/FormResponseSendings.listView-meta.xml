@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FormResponseSendings</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>QueueDeveloperName__c</columns>
+    <columns>SendForm__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Form Response Sendings</label>
+    <language>en_US</language>
+</ListView>
