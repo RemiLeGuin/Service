@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Merci de nous avoir contacté !</title>
+        <style type="text/css">
+            body {margin: 0; padding: 0; min-width: 100%!important;}
+            .content {width: 100%; max-width: 600px;}  
+        </style>
+        <style type="text/css">
+            @media only screen and (min-device-width: 601px) {
+                .content {width: 600px !important;}
+            }
+        </style>
+    </head>
+    <body yahoo bgcolor="#f6f8f1">
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <![endif]-->
+                    <table class="content" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td style="padding: 20px 0 0 0;">
+                                <img src="https://github.com/RemiLeGuin/Service/blob/master/content/Service_Image.png?raw=true" alt="Merci de nous avoir contacté !"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px 0 0 0; font-family: sans-serif">
+                                <p>Bonjour {!Case.SuppliedName},</p>
+                                <p>Conform&#233;ment &#224; votre demande et afin d'en faciliter le traitement, nous avons ouvert un dossier comportant le num&#233;ro <b>{!Case.CaseNumber}</b></p>
+                                <p>&#192; tr&#232;s bient&#244;t &#33;</p>
+                                <p>L'&#233;quipe Service<br/></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                </td>
+            </tr>
+        </table>
+        <![endif]-->
+    </body>
+</html>
