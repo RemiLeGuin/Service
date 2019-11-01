@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Acknowledgement of receipt for a Service case.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Service - Acknowledgement of receipt</name>
+    <style>none</style>
+    <subject>Service - Nous traitons votre demande</subject>
+    <textOnly>Bonjour {!Case.SuppliedName},
+
+Conformément à votre demande et afin d&#39;en faciliter le traitement, nous avons ouvert un dossier comportant le numéro {!Case.CaseNumber}
+
+À très bientôt !
+
+L&#39;équipe Service</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Service - Auto-Response</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service - Major Accounts,Service - Public Deals,Service - Restitutions,Service - Services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SendForm__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <senderEmail>remileguin@live.fr</senderEmail>
+            <senderName>Service</senderName>
+            <template>Service_AutoResponses/Service_Finalization</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service - Major Accounts,Service - Public Deals,Service - Restitutions,Service - Services</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.SendForm__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </criteriaItems>
+            <senderEmail>remileguin@live.fr</senderEmail>
+            <senderName>Service</senderName>
+            <template>Service_AutoResponses/Service_AcknowledgementOfReceipt</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>
