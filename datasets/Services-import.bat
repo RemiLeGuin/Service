@@ -1,1 +1,1 @@
-sfdx force:data:tree:import --plan datasets/Services-plan.json -u ServiceSO
+sfdx force:data:tree:import --plan datasets/Services-plan.json --targetusername ServiceSO
