@@ -2,8 +2,11 @@
     "orgName": "Service",
     "edition": "Developer",
     "language": "en_US",
-    "features": ["ServiceCloud"],
+    "features": ["Communities", "LightningServiceConsole", "ServiceCloud", "Sites", "SiteDotCom"],
     "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
         },
