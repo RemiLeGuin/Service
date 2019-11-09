@@ -9,6 +9,7 @@ After creating a default scratch org with alias 'ServiceSO' in Visual Studio Cod
 ```
 sfdx force:package:install --package 04t1n0000021jWVAAY --wait 10 --publishwait 10 --targetusername ServiceSO
 sfdx force:package:install --package 04t3X000001FDA6QAO --installationkey TriggerDependencyInjection --wait 10 --publishwait 10 --targetusername ServiceSO
+sfdx force:package:install --wait 10 --publishwait 10 --package 04t3X000001HPzMQAW --noprompt --targetusername ServiceSO
 sfdx force:package:install --package 04t3X000001FgljQAC --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ServiceSO
 sfdx force:source:push --targetusername ServiceSO
 sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses --targetusername ServiceSO
