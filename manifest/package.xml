@@ -17,7 +17,6 @@
         <name>NetworkBranding</name>
     </types>
     <types>
-        <members>Form Profile</members>
         <members>Service</members>
         <name>Profile</name>
     </types>
