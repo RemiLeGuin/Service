@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>NotAllowedToCreate</fullName>
-        <categories>Error message</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>You are not allowed to create</shortDescription>
-        <value>You are not allowed to create</value>
-    </labels>
-    <labels>
-        <fullName>NotAllowedToEdit</fullName>
-        <categories>Error message</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>You are not allowed to edit</shortDescription>
-        <value>You are not allowed to edit</value>
-    </labels>
-    <labels>
         <fullName>Service_FormAlreadySent</fullName>
         <categories>Service Auto-Response Form</categories>
         <language>en_US</language>
