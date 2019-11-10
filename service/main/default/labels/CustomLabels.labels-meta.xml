@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>NotAllowedToCreate</fullName>
+        <categories>Error message</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>You are not allowed to create</shortDescription>
+        <value>You are not allowed to create</value>
+    </labels>
+    <labels>
+        <fullName>NotAllowedToEdit</fullName>
+        <categories>Error message</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>You are not allowed to edit</shortDescription>
+        <value>You are not allowed to edit</value>
+    </labels>
+    <labels>
+        <fullName>Service_FormAlreadySent</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Form Already Sent</shortDescription>
+        <value>The form has already been completed and sent for this request.</value>
+    </labels>
+    <labels>
+        <fullName>Service_FormSuccessMessage</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Form Success Message</shortDescription>
+        <value>We successfully received your request and we thank you for the interest you have in our Service.</value>
+    </labels>
+    <labels>
+        <fullName>Service_KeepFileNumber</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Keep File Number</shortDescription>
+        <value>Please keep the file number:</value>
+    </labels>
+    <labels>
+        <fullName>Service_NoRequestForThisUrl</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No Request for this URL</shortDescription>
+        <value>There is no existing request for this URL address.</value>
+    </labels>
+    <labels>
+        <fullName>Service_RequestTransmission</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Request Transmission</shortDescription>
+        <value>We forward your request to an adviser from our team who will get back to you soon.</value>
+    </labels>
+    <labels>
+        <fullName>Service_RequiredFields</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Required Fields</shortDescription>
+        <value>* Required Fields</value>
+    </labels>
+    <labels>
+        <fullName>Service_Submit</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+</CustomLabels>

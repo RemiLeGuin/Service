@@ -1,0 +1,50 @@
+.component-display {
+    max-width: 70em;
+    margin: auto;
+}
+
+.required-margin-top {
+    margin-top: 0.4em;
+}
+
+.help-message-margin {
+    margin-left: 0.3em;
+    margin-top: -0.8em;
+}
+
+.help-font-color {
+    color: rgb(194,57,52);
+}
+
+.message-align {
+    display: inline-block;
+    padding: 1em;
+}
+
+.error-frame {
+    text-align: center;
+    margin-bottom: 2em;
+    border-radius: 5px;
+    background: rgb(194,57,52);
+}
+
+.error-message-font {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.error-message-color {
+    color: white;
+}
+
+.success-frame {
+    text-align: center;
+}
+
+.success-message-font {
+    font-size: 1.1em;
+}
+
+.success-message-color {
+    color: black;
+}
