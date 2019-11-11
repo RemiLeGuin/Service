@@ -108,7 +108,6 @@
         <recordType>Case.Service_Services</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
-    <userLicense>Guest</userLicense>
     <userPermissions>
         <enabled>false</enabled>
         <name>ActivitiesAccess</name>
@@ -216,10 +215,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>ExportReport</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>FieldServiceAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
