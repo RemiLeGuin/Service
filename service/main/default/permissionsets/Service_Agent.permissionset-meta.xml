@@ -73,6 +73,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.RequestSubtype__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.RequestType__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Siren__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Subject</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -84,6 +99,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.SuppliedName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.VehicleRegistrationNumber__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

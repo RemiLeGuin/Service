@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SendForm__c</fullName>
     <businessStatus>Active</businessStatus>
-    <complianceGroup>RGPD</complianceGroup>
+    <complianceGroup>GDPR</complianceGroup>
     <defaultValue>false</defaultValue>
     <description>Determines whether to send the form or not.</description>
     <externalId>false</externalId>

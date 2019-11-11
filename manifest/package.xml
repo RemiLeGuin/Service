@@ -9,6 +9,10 @@
         <name>CustomSite</name>
     </types>
     <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
         <members>Form</members>
         <name>Network</name>
     </types>
