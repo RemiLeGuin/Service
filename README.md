@@ -4,7 +4,15 @@
 
 ## Initiate a scratch org for development
 
-After creating a default scratch org with alias 'ServiceSO' in Visual Studio Code, execute the following command-lines:
+After creating a default scratch org with alias 'ServiceSO' in Visual Studio Code.
+
+Add the following line to the Form Profile:
+
+```
+<userLicense>Guest User License</userLicense>
+```
+
+Execute the following command-lines:
 
 ```
 sfdx force:package:install --package 04t1n0000021jWVAAY --wait 10 --publishwait 10 --targetusername ServiceSO
