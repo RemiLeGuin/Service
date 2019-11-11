@@ -108,7 +108,7 @@
         <recordType>Case.Service_Services</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
-    <userLicense>Salesforce</userLicense>
+    <userLicense>Guest</userLicense>
     <userPermissions>
         <enabled>false</enabled>
         <name>ActivitiesAccess</name>
