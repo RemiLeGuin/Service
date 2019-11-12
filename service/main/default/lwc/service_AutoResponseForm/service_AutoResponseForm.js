@@ -32,7 +32,6 @@ export default class service_AutoResponseForm extends LightningElement {
     @track visibleFields;
     requiredFields;
     @track error;
-    @track message;
     label = {
         formAlreadySent, noRequestForThisUrl, requiredFields, submit,
         formSuccessMessage, requestTransmission, keepFileNumber
@@ -47,7 +46,7 @@ export default class service_AutoResponseForm extends LightningElement {
         }
         else if (data) {
             this.error = undefined;
-            if (data.fields.TECH_FormCompleted__c.value) {
+            if (data.fields.FormCompleted__c.value) {
                 this.formCompleted = true;
                 this.hideForm = true;
             }
@@ -58,19 +57,7 @@ export default class service_AutoResponseForm extends LightningElement {
             }
         }
     }
-
-    @wire(getPicklistValuesByRecordType, { objectApiName: CASE_OBJECT, recordTypeId: '$recordTypeId' })
-    setOptions({ error, data }) {
-        if (error) {
-            this.error = error;
-            this.options = undefined;
-        }
-        else if (data) {
-            this.error = undefined;
-            this.options = data.picklistFieldValues.SenderType__c.values;
-        }
-    }
-
+    
     @wire(getRecordTypeName, { recordTypeId: '$recordTypeId' })
     setFloor({ error, data }) {
         if (error) {
@@ -80,13 +67,9 @@ export default class service_AutoResponseForm extends LightningElement {
         else if (data) {
             this.error = undefined;
             this.floor = data;
-            if (this.floor === 'F2MLServices') {
-                this.senderType = 'Customer';
-                this.template.querySelector('lightning-combobox.sender-type-combobox').classList.add('slds-hide');
-            }
         }
     }
-
+    /*
     @wire(getMetadata, { floor: '$floor', senderType: '$senderType' })
     setFields({ error, data }) {
         if (error) {
@@ -247,5 +230,5 @@ export default class service_AutoResponseForm extends LightningElement {
                 this.isLoaded = true;
             });
     }
-
+    */
 }

@@ -7,6 +7,9 @@
         "communitiesSettings": {
             "enableNetworksEnabled": true
         },
+        "sharingSettings": {
+            "enableSecureGuestAccess": true
+        },
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
         },
