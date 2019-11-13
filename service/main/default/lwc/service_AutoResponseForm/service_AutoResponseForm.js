@@ -1,10 +1,7 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
-import { getPicklistValuesByRecordType } from 'lightning/uiObjectInfoApi';
-import CASE_OBJECT from '@salesforce/schema/Case';
-import getRecordTypeName from '@salesforce/apex/Service_AutoResponseFormController.getRecordTypeName';
-import getMetadata from '@salesforce/apex/Service_AutoResponseFormController.getFormDisplayMetadata';
-import getRequiredFieldsExtra from '@salesforce/apex/Service_AutoResponseFormController.getFormRequiredFieldsExtra';
+import getRecordTypeNameById from '@salesforce/apex/Service_AutoResponseFormController.getRecordTypeNameById';
+import getAutoResponseFormDisplayByFloor from '@salesforce/apex/Service_AutoResponseFormController.getAutoResponseFormDisplayByFloor';
 import updateCase from '@salesforce/apex/Service_AutoResponseFormController.updateCase';
 import RECORDTYPEID_FIELD from '@salesforce/schema/Case.RecordTypeId';
 import FORMCOMPLETED_FIELD from '@salesforce/schema/Case.FormCompleted__c';
@@ -57,8 +54,8 @@ export default class service_AutoResponseForm extends LightningElement {
             }
         }
     }
-    
-    @wire(getRecordTypeName, { recordTypeId: '$recordTypeId' })
+
+    @wire(getRecordTypeNameById, { recordTypeId: '$recordTypeId' })
     setFloor({ error, data }) {
         if (error) {
             this.error = error;
@@ -69,13 +66,13 @@ export default class service_AutoResponseForm extends LightningElement {
             this.floor = data;
         }
     }
-    /*
-    @wire(getMetadata, { floor: '$floor', senderType: '$senderType' })
+
+    @wire(getAutoResponseFormDisplayByFloor, { floor: '$floor' })
     setFields({ error, data }) {
         if (error) {
             this.error = error;
             this.visibleFields = undefined;
-            this.requiredFieldsBase = undefined;
+            this.requiredFields = undefined;
             this.template.querySelector('.form-bottom').classList.add('slds-hide');
         }
         else if (data) {
@@ -85,25 +82,8 @@ export default class service_AutoResponseForm extends LightningElement {
                 this.template.querySelector('.form-bottom').classList.remove('slds-hide');
             }
             if (data[0] && data[0].RequiredFields__c) {
-                this.requiredFieldsBase = data[0].RequiredFields__c.replace(/\s/g, '').split(";");
-                this.requiredFields = this.requiredFieldsBase;
+                this.requiredFields = data[0].RequiredFields__c.replace(/\s/g, '').split(";");
             }
-        }
-        if (this.senderType) {
-            this.isLoaded = true;
-        }
-    }
-
-    @wire(getRequiredFieldsExtra, { floor: '$floor', requestType: '$requestType' })
-    getRequiredFieldsByRequestType({ error, data }) {
-        var requiredFieldsExtra;
-        if (error) {
-            this.error = error;
-        }
-        else if (data) {
-            this.error = undefined;
-            requiredFieldsExtra = data.replace(/\s/g, '').split(";");
-            this.setRequiredFieldsByRequestType(requiredFieldsExtra);
         }
     }
 
@@ -114,67 +94,15 @@ export default class service_AutoResponseForm extends LightningElement {
         }
     }
 
-    setRequiredFieldsByRequestType(requiredFieldsExtra) {
-        var temp = this.template;
-        // Get base required fields by floor and sender type.
-        var reqFields = this.requiredFieldsBase.slice(0);
-        // Add extra required fields (by request type) to the previous list.
-        requiredFieldsExtra.forEach(function (requiredFieldExtra) {
-            reqFields.push(requiredFieldExtra);
-        });
-        this.requiredFields = reqFields;
-        // Re-initialize the required attribute on all inputs.
-        this.visibleFields.forEach(function (visibleField) {
-            var selector = 'lightning-input-field[data-item=\'' + visibleField + '\']';
-            temp.querySelector(selector).required = false;
-        });
-        // Set required attribute to the right inputs.
-        this.requiredFields.forEach(function (requiredField) {
-            var selector = 'lightning-input-field[data-item=\'' + requiredField + '\']';
-            temp.querySelector(selector).required = true;
-        });
-    }
-
-    handleComboboxChange(event) {
-        this.template.querySelector('.sender-type-input').value = event.detail.value;
-        this.handleSenderTypeChange(event);
-    }
-
-    handleSenderTypeChange(event) {
-        this.isLoaded = false;
-        if (event.detail.value) {
-            this.senderType = event.detail.value;
-            this.template.querySelector('.form-bottom').classList.remove('slds-hide');
-        }
-        else {
-            this.senderType = undefined;
-            this.visibleFields = undefined;
-            this.template.querySelector('.form-bottom').classList.add('slds-hide');
-        }
-        if (!this.senderType) {
-            this.isLoaded = true;
-        }
-    }
-
-    handleInputChange(event) {
-        if (event.target.dataset.item === 'F2MLRequestType__c' && !event.detail.value) {
-            this.requestType = undefined;
-            this.setRequiredFieldsByRequestType([]);
-        }
-        else if (event.target.dataset.item === 'F2MLRequestType__c') {
-            this.requestType = event.detail.value;
-        }
-    }
-
     handleLoad() {
         var temp = this.template;
         if (this.formCompleted) {
-            this.message = this.label.formAlreadySent;
+            this.error = this.label.formAlreadySent;
             temp.querySelector('.error-frame').classList.remove('slds-hide');
             temp.querySelector('lightning-record-edit-form').classList.add('slds-hide');
         }
         else if (!this.recordId || !this.recordTypeId) {
-            this.message = this.label.noRequestForThisUrl;
+            this.error = this.label.noRequestForThisUrl;
             temp.querySelector('.error-frame').classList.remove('slds-hide');
             temp.querySelector('lightning-record-edit-form').classList.add('slds-hide');
         }
@@ -187,6 +115,7 @@ export default class service_AutoResponseForm extends LightningElement {
                 temp.querySelector(selector).required = true;
             });
         }
+        this.isLoaded = true;
     }
 
     handleClickOnSubmit() {
@@ -197,7 +126,7 @@ export default class service_AutoResponseForm extends LightningElement {
         const formFields = event.detail.fields;
         event.preventDefault();
         this.isLoaded = false;
-        this.handleUpdate(formFields);
+        //this.handleUpdate(formFields);
     }
 
     handleSuccess() {
@@ -219,16 +148,15 @@ export default class service_AutoResponseForm extends LightningElement {
                     if (result.includes('max length=')) {
                         result = result.replace('max length=', 'nombre maximum de caractères=')
                     }
-                    this.message = result;
+                    this.error = result;
                     this.template.querySelector('.error-frame').classList.remove('slds-hide');
                 }
                 this.isLoaded = true;
             })
             .catch(error => {
                 this.error = error;
-                this.message = undefined;
                 this.isLoaded = true;
             });
     }
-    */
+
 }

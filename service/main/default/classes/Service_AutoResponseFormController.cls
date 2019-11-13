@@ -11,7 +11,7 @@ public without sharing class Service_AutoResponseFormController {
 	 * @return Record Type's developer name.
 	 */
 	@AuraEnabled(cacheable = true)
-	public static String getRecordTypeName(Id recordTypeId) {
+	public static String getRecordTypeNameById(Id recordTypeId) {
 		return Schema.SObjectType.Case.getRecordTypeInfosById().get(recordTypeId).getDeveloperName();
 	}
 
@@ -21,20 +21,12 @@ public without sharing class Service_AutoResponseFormController {
 	 * @return A list of custom metadata telling the form's layout.
 	 */
 	@AuraEnabled(cacheable = true)
-	public static List<Object> getFormDisplayMetadata(String floor) {
-		return null;
-	}
-
-	/**
-	 * @description Get the form's required fields according to the floor and the selected request type.
-	 * @param floor Floor's record type's developer name.
-	 * @param requestType Request type.
-	 * @return A string containing required fields semi-colon separated for the form.
-	 */
-	@AuraEnabled(cacheable = true)
-	public static String getFormRequiredFieldsExtra(String floor, String requestType) {
-		if (String.isBlank(requestType)) {
-			return '';
+	public static List<Object> getAutoResponseFormDisplayByFloor(String floor) {
+		if (Schema.SObjectType.AutoResponseFormDisplay__mdt.isAccessible()
+			&& AutoResponseFormDisplay__mdt.Floor__c.getDescribe().isAccessible()
+			&& AutoResponseFormDisplay__mdt.VisibleFields__c.getDescribe().isAccessible()
+			&& AutoResponseFormDisplay__mdt.RequiredFields__c.getDescribe().isAccessible()) {
+			return [SELECT VisibleFields__c, RequiredFields__c FROM AutoResponseFormDisplay__mdt WHERE Floor__c = :floor];
 		}
 		else {
 			return null;
