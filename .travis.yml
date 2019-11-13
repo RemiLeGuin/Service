@@ -73,6 +73,6 @@ script:
 - sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019
   --publishwait 10 --wait 10 --targetusername Service
 #Deploys metadata uncovered by unlocked packages
-- sfdx force:source:deploy --manifest manifest/package.xml --wait 10 --verbose --testlevel NoTestRun --targetusername Service
+- sfdx force:source:deploy --manifest manifest/package.xml --wait 10 --testlevel NoTestRun --targetusername Service
 #Runs unit tests on target org
 - sfdx force:apex:test:run --targetusername Service --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL

@@ -14,4 +14,18 @@
             <value>Service - Restitutions,Service - Public Deals,Service - Services,Service - Major Accounts</value>
         </criteriaItems>
     </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>Service_CasesReadOnlyToGuestUsers</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Service restitutions and services cases shall be visible to customers filling the auto-response form.</description>
+        <label>Service - Cases Read Only To Guest Users</label>
+        <sharedTo>
+            <guestUser>Form</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Service - Restitutions,Service - Services</value>
+        </criteriaItems>
+    </sharingGuestRules>
 </SharingRules>
