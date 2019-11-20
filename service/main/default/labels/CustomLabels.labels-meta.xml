@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>Service_ErrorContactCustomerServiceByPhone</fullName>
+        <categories>Service Auto-Response Form</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Contact Customer Service by Phone</shortDescription>
+        <value>Error: Please contact the customer service by phone.</value>
+    </labels>
+    <labels>
         <fullName>Service_FormAlreadySent</fullName>
         <categories>Service Auto-Response Form</categories>
         <language>en_US</language>

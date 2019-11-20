@@ -21,12 +21,12 @@ public without sharing class Service_AutoResponseFormController {
 	 * @return A list of custom metadata telling the form's layout.
 	 */
 	@AuraEnabled(cacheable = true)
-	public static List<Object> getAutoResponseFormDisplayByFloor(String floor) {
+	public static AutoResponseFormDisplay__mdt getAutoResponseFormDisplayByFloor(String floor) {
 		if (Schema.SObjectType.AutoResponseFormDisplay__mdt.isAccessible()
 			&& AutoResponseFormDisplay__mdt.Floor__c.getDescribe().isAccessible()
 			&& AutoResponseFormDisplay__mdt.VisibleFields__c.getDescribe().isAccessible()
 			&& AutoResponseFormDisplay__mdt.RequiredFields__c.getDescribe().isAccessible()) {
-			return [SELECT VisibleFields__c, RequiredFields__c FROM AutoResponseFormDisplay__mdt WHERE Floor__c = :floor];
+			return [SELECT VisibleFields__c, RequiredFields__c FROM AutoResponseFormDisplay__mdt WHERE Floor__c = :floor LIMIT 1];
 		}
 		else {
 			return null;
@@ -41,7 +41,13 @@ public without sharing class Service_AutoResponseFormController {
 	 */
 	@AuraEnabled
 	public static String updateCase(String caseId, Map<String, Object> fields) {
-		Case cs = [SELECT Id, FormCompleted__c FROM Case WHERE Id = :caseId];
+		Case cs;
+		if (Schema.SObjectType.Case.isAccessible() && Case.FormCompleted__c.getDescribe().isAccessible()) {
+			cs = [SELECT Id, FormCompleted__c FROM Case WHERE Id = :caseId LIMIT 1];
+		}
+		else {
+			return Label.Service_ErrorContactCustomerServiceByPhone;
+		}
 		for (String stringField : fields.keySet()) {
 			cs.put(stringField, fields.get(stringField));
 		}

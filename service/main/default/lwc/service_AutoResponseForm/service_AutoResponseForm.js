@@ -11,6 +11,7 @@ import formAlreadySent from '@salesforce/label/c.Service_FormAlreadySent';
 import noRequestForThisUrl from '@salesforce/label/c.Service_NoRequestForThisUrl';
 import requiredFields from '@salesforce/label/c.Service_RequiredFields';
 import submit from '@salesforce/label/c.Service_Submit';
+import errorContactCustomerServiceByPhone from '@salesforce/label/c.Service_ErrorContactCustomerServiceByPhone';
 import formSuccessMessage from '@salesforce/label/c.Service_FormSuccessMessage';
 import requestTransmission from '@salesforce/label/c.Service_RequestTransmission';
 import keepFileNumber from '@salesforce/label/c.Service_KeepFileNumber';
@@ -31,13 +32,13 @@ export default class service_AutoResponseForm extends LightningElement {
     @track error;
     label = {
         formAlreadySent, noRequestForThisUrl, requiredFields, submit,
-        formSuccessMessage, requestTransmission, keepFileNumber
+        formSuccessMessage, requestTransmission, keepFileNumber, errorContactCustomerServiceByPhone
     };
 
     @wire(getRecord, { recordId: '$recordId', fields })
     loadCase({ error, data }) {
         if (error) {
-            this.error = error;
+            this.error = this.label.noRequestForThisUrl;
             this.recordTypeId = undefined;
             this.formCompleted = undefined;
         }
@@ -58,31 +59,42 @@ export default class service_AutoResponseForm extends LightningElement {
     @wire(getRecordTypeNameById, { recordTypeId: '$recordTypeId' })
     setFloor({ error, data }) {
         if (error) {
-            this.error = error;
+            this.error = this.label.errorContactCustomerServiceByPhone;
             this.floor = undefined;
+            this.template.querySelector('.error-frame').classList.remove('slds-hide');
+            this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
+            this.template.querySelector('.form-bottom').classList.add('slds-hide');
         }
         else if (data) {
             this.error = undefined;
             this.floor = data;
+            this.template.querySelector('.error-frame').classList.add('slds-hide');
+            this.template.querySelector('lightning-record-edit-form').classList.remove('slds-hide');
+            this.template.querySelector('.form-bottom').classList.remove('slds-hide');
         }
     }
 
     @wire(getAutoResponseFormDisplayByFloor, { floor: '$floor' })
     setFields({ error, data }) {
         if (error) {
-            this.error = error;
+            this.error = this.label.errorContactCustomerServiceByPhone;
             this.visibleFields = undefined;
             this.requiredFields = undefined;
+            this.template.querySelector('.error-frame').classList.remove('slds-hide');
+            this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
             this.template.querySelector('.form-bottom').classList.add('slds-hide');
         }
         else if (data) {
             this.error = undefined;
-            if (data[0] && data[0].VisibleFields__c) {
-                this.visibleFields = data[0].VisibleFields__c.replace(/\s/g, '').split(";");
+            this.template.querySelector('.error-frame').classList.add('slds-hide');
+            this.template.querySelector('lightning-record-edit-form').classList.remove('slds-hide');
+            this.template.querySelector('.form-bottom').classList.remove('slds-hide');
+            if (data.VisibleFields__c) {
+                this.visibleFields = data.VisibleFields__c.replace(/\s/g, '').split(';');
                 this.template.querySelector('.form-bottom').classList.remove('slds-hide');
             }
-            if (data[0] && data[0].RequiredFields__c) {
-                this.requiredFields = data[0].RequiredFields__c.replace(/\s/g, '').split(";");
+            if (data.RequiredFields__c) {
+                this.requiredFields = data.RequiredFields__c.replace(/\s/g, '').split(';');
             }
         }
     }
@@ -126,7 +138,7 @@ export default class service_AutoResponseForm extends LightningElement {
         const formFields = event.detail.fields;
         event.preventDefault();
         this.isLoaded = false;
-        //this.handleUpdate(formFields);
+        this.handleUpdate(formFields);
     }
 
     handleSuccess() {
