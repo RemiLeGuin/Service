@@ -24,7 +24,7 @@
                 </p>
             </div>
             <lightning-record-edit-form object-api-name="Case" record-type-id={recordTypeId} class="slds-m-around_large"
-                onload={handleLoad} onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                onload={handleLoad} onsubmit={handleSubmit}>
                 <!-- Inputs displays by iterating over the visible fields informed in the custom metadata corresponding to the form's context. -->
                 <template if:true={visibleFields}>
                     <template iterator:it={visibleFields}>

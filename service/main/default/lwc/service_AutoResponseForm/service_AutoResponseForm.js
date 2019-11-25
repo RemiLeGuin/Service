@@ -41,6 +41,8 @@ export default class service_AutoResponseForm extends LightningElement {
             this.error = this.label.noRequestForThisUrl;
             this.recordTypeId = undefined;
             this.formCompleted = undefined;
+            this.displayErrorFrame();
+            this.isLoaded = true;
         }
         else if (data) {
             this.error = undefined;
@@ -61,9 +63,8 @@ export default class service_AutoResponseForm extends LightningElement {
         if (error) {
             this.error = this.label.errorContactCustomerServiceByPhone;
             this.floor = undefined;
-            this.template.querySelector('.error-frame').classList.remove('slds-hide');
-            this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
-            this.template.querySelector('.form-bottom').classList.add('slds-hide');
+            this.displayErrorFrame();
+            this.isLoaded = true;
         }
         else if (data) {
             this.error = undefined;
@@ -80,9 +81,8 @@ export default class service_AutoResponseForm extends LightningElement {
             this.error = this.label.errorContactCustomerServiceByPhone;
             this.visibleFields = undefined;
             this.requiredFields = undefined;
-            this.template.querySelector('.error-frame').classList.remove('slds-hide');
-            this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
-            this.template.querySelector('.form-bottom').classList.add('slds-hide');
+            this.displayErrorFrame();
+            this.isLoaded = true;
         }
         else if (data) {
             this.error = undefined;
@@ -99,24 +99,15 @@ export default class service_AutoResponseForm extends LightningElement {
         }
     }
 
-    renderedCallback() {
-        var descriptionInput = this.template.querySelector('lightning-input-field[data-item=\'Description\']');
-        if (this.description && descriptionInput) {
-            descriptionInput.value = this.description;
-        }
-    }
-
     handleLoad() {
         var temp = this.template;
         if (this.formCompleted) {
             this.error = this.label.formAlreadySent;
-            temp.querySelector('.error-frame').classList.remove('slds-hide');
-            temp.querySelector('lightning-record-edit-form').classList.add('slds-hide');
+            this.displayErrorFrame();
         }
         else if (!this.recordId || !this.recordTypeId) {
             this.error = this.label.noRequestForThisUrl;
-            temp.querySelector('.error-frame').classList.remove('slds-hide');
-            temp.querySelector('lightning-record-edit-form').classList.add('slds-hide');
+            this.displayErrorFrame();
         }
         else if (this.hideForm) {
             temp.querySelector('lightning-record-edit-form').classList.add('slds-hide');
@@ -130,6 +121,19 @@ export default class service_AutoResponseForm extends LightningElement {
         this.isLoaded = true;
     }
 
+    renderedCallback() {
+        var descriptionInput = this.template.querySelector('lightning-input-field[data-item=\'Description\']');
+        if (this.description && descriptionInput) {
+            descriptionInput.value = this.description;
+        }
+    }
+
+    displayErrorFrame() {
+        this.template.querySelector('.error-frame').classList.remove('slds-hide');
+        this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
+        this.template.querySelector('.form-bottom').classList.add('slds-hide');
+    }
+
     handleClickOnSubmit() {
         this.template.querySelector('.error-frame').classList.add('slds-hide');
     }
@@ -139,11 +143,6 @@ export default class service_AutoResponseForm extends LightningElement {
         event.preventDefault();
         this.isLoaded = false;
         this.handleUpdate(formFields);
-    }
-
-    handleSuccess() {
-        this.template.querySelector('lightning-record-edit-form').classList.add('slds-hide');
-        this.template.querySelector('p').classList.remove('slds-hide');
     }
 
     handleUpdate(formFields) {
