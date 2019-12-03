@@ -52,7 +52,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>User.BypassedObjectRestrictions__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Service - Auto-Response Form</label>

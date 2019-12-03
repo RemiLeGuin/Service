@@ -21,6 +21,8 @@ private class Service_AutoResponseFormController_Test {
         });
         Id autoResponseFormPermissionId = [SELECT Id FROM PermissionSet WHERE Name = 'Service_AutoResponseForm' LIMIT 1][0].Id;
         insert new PermissionSetAssignment (PermissionSetId = autoResponseFormPermissionId, AssigneeId = guestUser.Id);
+        Id coreUserPermissionId = [SELECT Id FROM PermissionSet WHERE Name = 'Core_User' LIMIT 1][0].Id;
+        insert new PermissionSetAssignment (PermissionSetId = coreUserPermissionId, AssigneeId = guestUser.Id);
 
         User unauthorizedUser = (User)TDF.createSObject('User', new Map<String,Object> {
             'FirstName' => 'Unauthorized',
