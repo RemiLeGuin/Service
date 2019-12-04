@@ -18,7 +18,7 @@ Execute the following command-lines:
 sfdx force:package:install --package 04t1n0000021jWVAAY --wait 10 --publishwait 10 --targetusername ServiceSO
 sfdx force:package:install --package 04t3X000001FDA6QAO --installationkey TriggerDependencyInjection --wait 10 --publishwait 10 --targetusername ServiceSO
 sfdx force:package:install --package 04t3X000001HPzMQAW --wait 10 --publishwait 10 --targetusername ServiceSO
-sfdx force:package:install --package 04t3X000001Hb1cQAC --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ServiceSO
+sfdx force:package:install --package 04t3X000001Hb1rQAC --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ServiceSO
 sfdx force:source:push --targetusername ServiceSO
 sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses --targetusername ServiceSO
 ```
