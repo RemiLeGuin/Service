@@ -17,7 +17,8 @@ private class Service_AutoResponseFormController_Test {
             'Email' => 'guestuser@form.fr',
             'Username' => 'guestuser@form.fr',
             'CommunityNickname' => 'guestuser',
-            'ProfileId' => formProfileId
+            'ProfileId' => formProfileId,
+			'BypassedObjectRestrictions__c' => 'Case (Edit)'
         });
         Id autoResponseFormPermissionId = [SELECT Id FROM PermissionSet WHERE Name = 'Service_AutoResponseForm' LIMIT 1][0].Id;
         insert new PermissionSetAssignment (PermissionSetId = autoResponseFormPermissionId, AssigneeId = guestUser.Id);
@@ -33,7 +34,34 @@ private class Service_AutoResponseFormController_Test {
             'CommunityNickname' => 'unauthorizeduser',
             'ProfileId' => formProfileId
         });
+
+		System.runAs(guestUser) {
+			Case cs = (Case)TDF.createSObject('Case', new Map<String,Object> {
+				'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS,
+				'Origin' => 'Email',
+				'Priority' => 'Low',
+				'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_PublicDeals'),
+				'SuppliedEmail' => 'test@email.com'
+			});
+		}
     }
+
+	/**
+	 * @description Test the getAutoResponseFormDisplayByFloor method when user has access to the AutoResponseFormDisplay__mdt custom metadata.
+	 */
+	@IsTest
+	private static void getRecordTypeNameById_TestNoRT() {
+        User guestUser = [SELECT Id FROM User WHERE Username = 'guestuser@form.fr' LIMIT 1];
+
+		Id recordTypeDeveloperName;
+		Test.startTest();
+		System.runAs(guestUser) {
+			recordTypeDeveloperName = Service_AutoResponseFormController.getRecordTypeNameById('000000000000000000');
+		}
+		Test.stopTest();
+
+		System.assertEquals(null, recordTypeDeveloperName);
+	}
 
 	/**
 	 * @description Test the getAutoResponseFormDisplayByFloor method when user has access to the AutoResponseFormDisplay__mdt custom metadata.
@@ -76,63 +104,27 @@ private class Service_AutoResponseFormController_Test {
 	/**
 	 * @description Test the updateCase method when success.
 	 */
-    /*
 	@IsTest
 	private static void updateCase_TestSuccess() {
-		Account entitlementHandler = new Account(Name = 'Entitlement Handler');
-		insert entitlementHandler;
-		insert new Entitlement(Name = 'F2ML - Public Deals Priority', AccountId = entitlementHandler.Id);
-		Id publicDealsQueueId = EM016_GroupOrQueue.getQueuesIdByDevNamePrefix('F2ML_MarchesPublics').values() [0];
-		Case cs = new Case(RecordTypeId = EM006_Case.RECORDTYPE_F2MLPublicDeals,
-		                   Origin = 'Email',
-		                   Priority = 'Low',
-		                   OwnerId = publicDealsQueueId,
-		                   SuppliedEmail = 'test@email.com');
-		insert cs;
+		User guestUser = [SELECT Id FROM User WHERE Username = 'guestuser@form.fr' LIMIT 1];
+		Case cs = [SELECT Id FROM Case LIMIT 1];
 		Map<String, Object> fields = new Map<String, Object> ();
-		fields.put('SenderType__c', 'Customer');
-		fields.put('F2MLRequestType__c', 'Duplicata');
-		fields.put('AgreementNumber__c', '123');
+		fields.put('RequestType__c', 'Duplicata');
+		fields.put('RequestSubtype__c', 'Factures/Avoirs');
+		fields.put('VehicleRegistrationNumber__c', '123-AB-00');
 
 		String returnMessage;
 		Test.startTest();
-		returnMessage = LWCC001_AutoResponseForm.updateCase(cs.Id, fields);
+		System.runAs(guestUser) {
+			returnMessage = Service_AutoResponseFormController.updateCase(cs.Id, fields);
+		}
 		Test.stopTest();
 
 		System.assertEquals('Success', returnMessage, 'The update failed.');
-		cs = [SELECT SenderType__c, F2MLRequestType__c, AgreementNumber__c FROM Case LIMIT 1];
-		System.assertEquals('Customer', cs.SenderType__c, 'Wrong value set for Case\'s sender type.');
-		System.assertEquals('Duplicata', cs.F2MLRequestType__c, 'Wrong value set for Case\'s request type.');
-		System.assertEquals('123', cs.AgreementNumber__c, 'Wrong value set for Case\'s agreement number.');
+		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c FROM Case LIMIT 1];
+		System.assertEquals('Duplicata', cs.RequestType__c, 'Wrong value set for Case\'s request type.');
+		System.assertEquals('Factures/Avoirs', cs.RequestSubtype__c, 'Wrong value set for Case\'s sub request type.');
+		System.assertEquals('123-AB-00', cs.VehicleRegistrationNumber__c, 'Wrong value set for Case\'s vehicle registration number.');
 	}
-    */
-	/**
-	 * @description Test the updateCase method when error.
-	 */
-    /*
-	@IsTest
-	private static void updateCase_TestError() {
-		Account entitlementHandler = new Account(Name = 'Entitlement Handler');
-		insert entitlementHandler;
-		insert new Entitlement(Name = 'F2ML - Public Deals Priority', AccountId = entitlementHandler.Id);
-		Id publicDealsQueueId = EM016_GroupOrQueue.getQueuesIdByDevNamePrefix('F2ML_MarchesPublics').values() [0];
-		Case cs = new Case(RecordTypeId = EM006_Case.RECORDTYPE_F2MLPublicDeals,
-		                   Origin = 'Email',
-		                   Priority = 'Low',
-		                   OwnerId = publicDealsQueueId,
-		                   SuppliedEmail = 'test@email.com');
-		insert cs;
-		Map<String, Object> fields = new Map<String, Object> ();
-		fields.put('SenderType__c', 'Customer');
-		fields.put('F2MLRequestType__c', 'Duplicata');
-		fields.put('RRDICode__c', 'RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR');
-
-		String returnMessage;
-		Test.startTest();
-		returnMessage = LWCC001_AutoResponseForm.updateCase(cs.Id, fields);
-		Test.stopTest();
-
-		System.assert(returnMessage != 'Success' , 'Too long input validated.');
-	}
-    */
+    
 }

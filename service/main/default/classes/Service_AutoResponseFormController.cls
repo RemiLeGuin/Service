@@ -12,7 +12,13 @@ public without sharing class Service_AutoResponseFormController {
 	 */
 	@AuraEnabled(cacheable = true)
 	public static String getRecordTypeNameById(Id recordTypeId) {
-		return Schema.SObjectType.Case.getRecordTypeInfosById().get(recordTypeId).getDeveloperName();
+		RecordTypeInfo rtInfo = Schema.SObjectType.Case.getRecordTypeInfosById().get(recordTypeId);
+		if (rtInfo == null) {
+			return null;
+		}
+		else {
+			return rtInfo.getDeveloperName();
+		}
 	}
 
 	/**
