@@ -36,12 +36,22 @@ private class Service_AutoResponseFormController_Test {
         });
 
 		System.runAs(guestUser) {
-			Case cs = (Case)TDF.createSObject('Case', new Map<String,Object> {
+			Case caseFormNotCompleted = (Case)TDF.createSObject('Case', new Map<String,Object> {
+				'Subject' => 'Form not completed',
 				'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS,
 				'Origin' => 'Email',
 				'Priority' => 'Low',
 				'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_PublicDeals'),
 				'SuppliedEmail' => 'test@email.com'
+			});
+			Case caseFormCompleted = (Case)TDF.createSObject('Case', new Map<String,Object> {
+				'Subject' => 'Form completed',
+				'RecordTypeId' => Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS,
+				'Origin' => 'Email',
+				'Priority' => 'Low',
+				'OwnerId' => Service_CaseUtilities.SERVICEQUEUEIDSBYDEVELOPERNAME.get('Service_PublicDeals'),
+				'SuppliedEmail' => 'test@email.com',
+				'FormCompleted__c' => true
 			});
 		}
     }
@@ -107,7 +117,7 @@ private class Service_AutoResponseFormController_Test {
 	@IsTest
 	private static void updateCase_TestSuccess() {
 		User guestUser = [SELECT Id FROM User WHERE Username = 'guestuser@form.fr' LIMIT 1];
-		Case cs = [SELECT Id FROM Case LIMIT 1];
+		Case cs = [SELECT Id FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
 		Map<String, Object> fields = new Map<String, Object> ();
 		fields.put('RequestType__c', 'Duplicata');
 		fields.put('RequestSubtype__c', 'Factures/Avoirs');
@@ -120,11 +130,63 @@ private class Service_AutoResponseFormController_Test {
 		}
 		Test.stopTest();
 
-		System.assertEquals('Success', returnMessage, 'The update failed.');
-		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c FROM Case LIMIT 1];
-		System.assertEquals('Duplicata', cs.RequestType__c, 'Wrong value set for Case\'s request type.');
-		System.assertEquals('Factures/Avoirs', cs.RequestSubtype__c, 'Wrong value set for Case\'s sub request type.');
-		System.assertEquals('123-AB-00', cs.VehicleRegistrationNumber__c, 'Wrong value set for Case\'s vehicle registration number.');
+		System.assertEquals('Success', returnMessage, 'The update failed');
+		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c, FormCompleted__c FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
+		System.assertEquals('Duplicata', cs.RequestType__c, 'Wrong value set for Case\'s request type');
+		System.assertEquals('Factures/Avoirs', cs.RequestSubtype__c, 'Wrong value set for Case\'s sub request type');
+		System.assertEquals('123-AB-00', cs.VehicleRegistrationNumber__c, 'Wrong value set for Case\'s vehicle registration number');
+		System.assertEquals(true, cs.FormCompleted__c, 'The technical field informing the form\'s completion has not been set');
 	}
-    
+
+	/**
+	 * @description Test the updateCase method when user is not allowed to edit cases.
+	 */
+	@IsTest
+	private static void updateCase_TestPermissionError() {
+		User guestUser = [SELECT Id FROM User WHERE Username = 'unauthorizeduser@form.fr' LIMIT 1];
+		Case cs = [SELECT Id FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
+		Map<String, Object> fields = new Map<String, Object> ();
+		fields.put('RequestType__c', 'Duplicata');
+		fields.put('RequestSubtype__c', 'Factures/Avoirs');
+		fields.put('VehicleRegistrationNumber__c', '123-AB-00');
+
+		String returnMessage;
+		Test.startTest();
+		System.runAs(guestUser) {
+			returnMessage = Service_AutoResponseFormController.updateCase(cs.Id, fields);
+		}
+		Test.stopTest();
+
+		System.assertEquals(Label.Service_ErrorContactCustomerServiceByPhone, returnMessage, 'The update succeeded while the user cannot edit cases');
+		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
+		System.assertEquals(null, cs.RequestType__c, 'Request type updated while it should not');
+		System.assertEquals(null, cs.RequestSubtype__c, 'Request subtype updated while it should not');
+		System.assertEquals(null, cs.VehicleRegistrationNumber__c, 'Vehicle registration number updated while it should not');
+	}
+
+	/**
+	 * @description Test the updateCase method when the form has already been fulfilled and sent.
+	 */
+	@IsTest
+	private static void updateCase_TestFormAlreadyCompleted() {
+		User guestUser = [SELECT Id FROM User WHERE Username = 'guestuser@form.fr' LIMIT 1];
+		Case cs = [SELECT Id FROM Case WHERE Subject = 'Form completed' LIMIT 1];
+		Map<String, Object> fields = new Map<String, Object> ();
+		fields.put('RequestType__c', 'Duplicata');
+		fields.put('RequestSubtype__c', 'Factures/Avoirs');
+		fields.put('VehicleRegistrationNumber__c', '123-AB-00');
+
+		String returnMessage;
+		Test.startTest();
+		System.runAs(guestUser) {
+			returnMessage = Service_AutoResponseFormController.updateCase(cs.Id, fields);
+		}
+		Test.stopTest();
+
+		System.assertEquals(Label.Service_FormAlreadySent, returnMessage, 'The update succeeded while the form has already been sent before');
+		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c FROM Case WHERE Subject = 'Form completed' LIMIT 1];
+		System.assertEquals(null, cs.RequestType__c, 'Request type updated while it should not');
+		System.assertEquals(null, cs.RequestSubtype__c, 'Request subtype updated while it should not');
+		System.assertEquals(null, cs.VehicleRegistrationNumber__c, 'Vehicle registration number updated while it should not');
+	}
 }
