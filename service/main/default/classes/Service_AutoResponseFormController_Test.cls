@@ -189,4 +189,31 @@ private class Service_AutoResponseFormController_Test {
 		System.assertEquals(null, cs.RequestSubtype__c, 'Request subtype updated while it should not');
 		System.assertEquals(null, cs.VehicleRegistrationNumber__c, 'Vehicle registration number updated while it should not');
 	}
+	
+	/**
+	 * @description Test the updateCase method when the update fails because of a wrong vehicle registration number.
+	 */
+	@IsTest
+	private static void updateCase_TestUpdateError() {
+		User guestUser = [SELECT Id FROM User WHERE Username = 'guestuser@form.fr' LIMIT 1];
+		Case cs = [SELECT Id FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
+		Map<String, Object> fields = new Map<String, Object> ();
+		fields.put('RequestType__c', 'Duplicata');
+		fields.put('RequestSubtype__c', 'Factures/Avoirs');
+		fields.put('VehicleRegistrationNumber__c', '0000-XX-11');
+
+		String returnMessage;
+		Test.startTest();
+		System.runAs(guestUser) {
+			returnMessage = Service_AutoResponseFormController.updateCase(cs.Id, fields);
+		}
+		Test.stopTest();
+
+		System.assertNotEquals('Success', returnMessage, 'The update succeeded while there should be an error');
+		cs = [SELECT RequestType__c, RequestSubtype__c, VehicleRegistrationNumber__c FROM Case WHERE Subject = 'Form not completed' LIMIT 1];
+		System.assertEquals(null, cs.RequestType__c, 'Request type updated while it should not');
+		System.assertEquals(null, cs.RequestSubtype__c, 'Request subtype updated while it should not');
+		System.assertEquals(null, cs.VehicleRegistrationNumber__c, 'Vehicle registration number updated while it should not');
+	}
+
 }

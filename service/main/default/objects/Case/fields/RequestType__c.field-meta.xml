@@ -3,7 +3,7 @@
     <fullName>RequestType__c</fullName>
     <businessStatus>Active</businessStatus>
     <complianceGroup>GDPR</complianceGroup>
-    <description>Service request type</description>
+    <description>Service request type.</description>
     <externalId>false</externalId>
     <label>Request Type</label>
     <required>false</required>
