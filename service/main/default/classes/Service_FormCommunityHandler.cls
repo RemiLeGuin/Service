@@ -18,8 +18,8 @@ public with sharing class Service_FormCommunityHandler implements Callable {
                         || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_PUBLICDEALS
                         || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
                         || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
-                    Network formNetwork = [SELECT Id FROM Network WHERE Name = 'Form' LIMIT 1];
-                    cs.FormCommunityUrl__c = Network.getLoginUrl(formNetwork.Id).removeEndIgnoreCase('login');
+                    Id formNetworkId = [SELECT Id FROM Network WHERE Name = 'Form' LIMIT 1][0].Id;
+                    cs.FormCommunityUrl__c = Network.getLoginUrl(formNetworkId).removeEndIgnoreCase('login');
                 }
             }
         }
