@@ -23,6 +23,8 @@ sfdx force:source:push --targetusername ServiceSO
 sfdx force:user:permset:assign --permsetname Service_AutomatedProcesses --targetusername ServiceSO
 ```
 
+Assign the Service_AutoResponseForm permission set to the Form Site Guest User.
+
 Replace Record Type IDs in the Case datasets files and execute the following command-lines:
 
 ```
