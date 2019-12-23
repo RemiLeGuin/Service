@@ -1,7 +1,7 @@
 /**
  * @author Rémi Le Guin
- * @date Creation 08/11/2019
- * @description Service_AutoResponseFormController - Controller for the form sent by email to the customer to qualify a case.
+ * @date 08/11/2019
+ * @description Controller for the form sent by email to the customer to qualify a case.
  */
 public without sharing class Service_AutoResponseFormController {
 

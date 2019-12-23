@@ -1,6 +1,6 @@
 /**
  * @author Rémi Le Guin
- * @date Creation 22/11/2019
+ * @date 22/11/2019
  * @description Test class for the Auto-Response Form's Controller.
  */
 @IsTest
