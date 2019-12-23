@@ -7,11 +7,6 @@
     <description>Permission set for a technical user to execute automated processes such as email-to-cases or workflows.</description>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.FormCommunityUrl__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.SendForm__c</field>
         <readable>true</readable>
     </fieldPermissions>

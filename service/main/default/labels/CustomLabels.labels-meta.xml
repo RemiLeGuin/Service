@@ -17,6 +17,14 @@
         <value>The form has already been completed and sent for this request.</value>
     </labels>
     <labels>
+        <fullName>Service_FormCommunityUrl</fullName>
+        <categories>Service Technical</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Form Community URL</shortDescription>
+        <value>https://serviceform-developer-edition.eu29.force.com</value>
+    </labels>
+    <labels>
         <fullName>Service_FormSuccessMessage</fullName>
         <categories>Service Auto-Response Form</categories>
         <language>en_US</language>
