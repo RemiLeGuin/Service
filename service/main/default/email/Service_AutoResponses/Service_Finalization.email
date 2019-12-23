@@ -29,7 +29,7 @@
                             <td style="padding: 20px 0 0 0; font-family: sans-serif">
                                 <p>Bonjour {!Case.SuppliedName},</p>
                                 <p>Conform&#233;ment &#224; votre demande et afin d'en faciliter le traitement, nous avons ouvert un dossier comportant le num&#233;ro <b>{!Case.CaseNumber}</b></p>
-                                <p>Nous vous invitons &#224; cliquer sur <a href="{!$Label.Service_FormCommunityUrl}/s/formulez-votre-demande?recordId={!Case.Id}"><b>ce lien</b></a> afin de soumettre la prise en charge de votre demande.</p>
+                                <p>Nous vous invitons &#224; cliquer sur <a href="{!Case.FormCommunityUrl__c}/s/formulez-votre-demande?recordId={!Case.Id}"><b>ce lien</b></a> afin de soumettre la prise en charge de votre demande.</p>
                                 <p>Nous attirons votre attention sur le fait que nous ne pourrons donner suite &#224; votre demande si celle-ci n'est pas finalis&#233;e.</p>
                                 <p>&#192; tr&#232;s bient&#244;t &#33;</p>
                                 <p>L'&#233;quipe Service<br/></p>
