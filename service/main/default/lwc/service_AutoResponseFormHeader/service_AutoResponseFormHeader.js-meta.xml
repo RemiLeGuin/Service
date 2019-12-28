@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="service_AutoResponseFormHeader">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Service Contact Form Header</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="title" type="String" label="Title" description="Set a title." default="FAIRE UNE DEMANDE"/>
+            <property name="image" type="String" label="Image" description="Set an image." default="/s/resource/1564943137000/Service_Logo"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

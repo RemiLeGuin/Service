@@ -44,7 +44,7 @@ private class Service_FormResponseSendingHandler_Test {
 
         cases = [SELECT SendForm__c FROM Case];
         for (Case cs : cases) {
-            System.assertEquals(true, cs.SendForm__c, 'The SendForm__c field is not set for a Service case');
+            System.assertEquals(false, cs.SendForm__c, 'The SendForm__c field is set for a Major Accounts case');
         }
     }
 

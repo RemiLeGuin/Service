@@ -1,0 +1,51 @@
+<!--
+    * @author Rémi Le Guin
+    * @date Creation 08/11/2019
+    * @description Service_AutoResponseForm - Form sent by email to the customer to qualify a Service case.
+-->
+<template>
+    <!-- The waiting spinner displays on form load, on sender type selection and on form submission. -->
+    <div if:false={isLoaded}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    <lightning-card title="">
+        <div class="slds-m-around_large">
+            <!-- Error message display. -->
+            <div class="error-frame slds-hide">
+                <p class="message-align error-message-font error-message-color">{error}</p>
+            </div>
+            <!-- Success message display. -->
+            <div class="success-frame slds-hide">
+                <p class="message-align success-message-font success-message-color">
+                    {label.formSuccessMessage}<br/>{label.requestTransmission}
+                </p>
+                <p class="message-align success-message-font success-message-color">
+                    {label.keepFileNumber} <b>{caseNumber}</b>
+                </p>
+            </div>
+            <lightning-record-edit-form object-api-name="Case" record-type-id={recordTypeId} class="slds-m-around_large"
+                onload={handleLoad} onsubmit={handleSubmit}>
+                <!-- Inputs displays by iterating over the visible fields informed in the custom metadata corresponding to the form's context. -->
+                <template if:true={visibleFields}>
+                    <template iterator:it={visibleFields}>
+                        <div key={it.value} data-item={it.value}>
+                            <lightning-input-field key={it.value} data-item={it.value} field-name={it.value}
+                                onchange={handleInputChange}></lightning-input-field>
+                        </div>
+                    </template>
+                </template>
+                <div class="form-bottom slds-clearfix slds-m-top_large slds-hide">
+                    <div class="slds-float_left">
+                        <span class="slds-form-element__help help-font-color">{label.requiredFields}</span>
+                    </div>
+                    <div class="slds-float_right">
+                        <!-- An action is performed 'onclick' on the button to clear the 'error-frame' displaying an error message. -->
+                        <!-- Then, the parent <lightning-record-edit-form> executes the 'onsubmit' process to perform the update on server-side. -->
+                        <lightning-button variant="brand" type="submit" name="send" label={label.submit}
+                            onclick={handleClickOnSubmit}></lightning-button>
+                    </div>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

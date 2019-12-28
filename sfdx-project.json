@@ -4,8 +4,8 @@
             "path": "service",
             "default": true,
             "package": "Service",
-            "versionName": "ver 0.2",
-            "versionNumber": "0.2.0.NEXT",
+            "versionName": "ver 0.3",
+            "versionNumber": "0.3.0.NEXT",
             "dependencies": [
                 {
                     "package": "TDF"
@@ -15,8 +15,12 @@
                     "versionNumber": "1.0.0.LATEST"
                 },
                 {
+                    "package": "Communities Assets",
+                    "versionNumber": "1.0.0.LATEST"
+                },
+                {
                     "package": "Core",
-                    "versionNumber": "0.1.0.LATEST"
+                    "versionNumber": "0.3.0.LATEST"
                 }
             ]
         },
@@ -31,6 +35,7 @@
     "packageAliases": {
         "TDF": "04t1n0000021jWVAAY",
         "Trigger Dependency Injection (TDI)": "0Ho3X000000KyjQSAS",
+        "Communities Assets": "0Ho3X000000KyoHSAS",
         "Core": "0Ho3X000000KyjVSAS",
         "Service": "0Ho3X000000KyjaSAC"
     }

@@ -1,7 +1,17 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {},
+        "paths": {
+            "c/service_AutoResponseForm": [
+                "service_AutoResponseForm/service_AutoResponseForm.js"
+            ],
+            "c/service_AutoResponseFormFooter": [
+                "service_AutoResponseFormFooter/service_AutoResponseFormFooter.js"
+            ],
+            "c/service_AutoResponseFormHeader": [
+                "service_AutoResponseFormHeader/service_AutoResponseFormHeader.js"
+            ]
+        },
         "experimentalDecorators": true
     },
     "include": [

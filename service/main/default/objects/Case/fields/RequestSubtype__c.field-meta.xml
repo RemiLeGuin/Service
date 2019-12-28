@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequestSubtype__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>Service request subtype.</description>
+    <externalId>false</externalId>
+    <label>Request Subtype</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RequestType__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Durée</fullName>
+                <default>false</default>
+                <label>Durée</label>
+            </value>
+            <value>
+                <fullName>Kilométrage</fullName>
+                <default>false</default>
+                <label>Kilométrage</label>
+            </value>
+            <value>
+                <fullName>Durée et kilométrage</fullName>
+                <default>false</default>
+                <label>Durée et kilométrage</label>
+            </value>
+            <value>
+                <fullName>Prestations</fullName>
+                <default>false</default>
+                <label>Prestations</label>
+            </value>
+            <value>
+                <fullName>Valeur de rachat</fullName>
+                <default>false</default>
+                <label>Valeur de rachat</label>
+            </value>
+            <value>
+                <fullName>Restitutions</fullName>
+                <default>false</default>
+                <label>Restitutions</label>
+            </value>
+            <value>
+                <fullName>Adresses</fullName>
+                <default>false</default>
+                <label>Adresses</label>
+            </value>
+            <value>
+                <fullName>RIB</fullName>
+                <default>false</default>
+                <label>RIB</label>
+            </value>
+            <value>
+                <fullName>Factures/Avoirs</fullName>
+                <default>false</default>
+                <label>Factures/Avoirs</label>
+            </value>
+            <value>
+                <fullName>Contrat</fullName>
+                <default>false</default>
+                <label>Contrat</label>
+            </value>
+            <value>
+                <fullName>Echéancier</fullName>
+                <default>false</default>
+                <label>Echéancier</label>
+            </value>
+            <value>
+                <fullName>Carte grise</fullName>
+                <default>false</default>
+                <label>Carte grise</label>
+            </value>
+            <value>
+                <fullName>Je souscris à la prestation gestion carburant</fullName>
+                <default>false</default>
+                <label>Je souscris à la prestation gestion carburant</label>
+            </value>
+            <value>
+                <fullName>Je commande une ou plusieurs cartes</fullName>
+                <default>false</default>
+                <label>Je commande une ou plusieurs cartes</label>
+            </value>
+            <value>
+                <fullName>Je résilie une ou plusieurs cartes</fullName>
+                <default>false</default>
+                <label>Je résilie une ou plusieurs cartes</label>
+            </value>
+            <value>
+                <fullName>Je déclare la perte, le vol ou l&#39;utilisation frauduleuse de ma carte</fullName>
+                <default>false</default>
+                <label>Je déclare la perte, le vol ou l&#39;utilisation frauduleuse de ma carte</label>
+            </value>
+            <value>
+                <fullName>Je n&#39;ai pas reçu mon certificat d&#39;immatriculation</fullName>
+                <default>false</default>
+                <label>Je n&#39;ai pas reçu mon certificat d&#39;immatriculation</label>
+            </value>
+            <value>
+                <fullName>Je déclare un changement d&#39;adresse</fullName>
+                <default>false</default>
+                <label>Je déclare un changement d&#39;adresse</label>
+            </value>
+            <value>
+                <fullName>Je déclare un changement sur la situation de mon véhicule et/ou de mon entreprise</fullName>
+                <default>false</default>
+                <label>Je déclare un changement sur la situation de mon véhicule et/ou de mon entreprise</label>
+            </value>
+            <value>
+                <fullName>J&#39;ai fait l&#39;objet d&#39;une usurpation de plaques</fullName>
+                <default>false</default>
+                <label>J&#39;ai fait l&#39;objet d&#39;une usurpation de plaques</label>
+            </value>
+            <value>
+                <fullName>Je souscris à la prestation conciergerie des immatriculations</fullName>
+                <default>false</default>
+                <label>Je souscris à la prestation conciergerie des immatriculations</label>
+            </value>
+            <value>
+                <fullName>Je fais une demande sur la prestation conciergerie des immatriculations</fullName>
+                <default>false</default>
+                <label>Je fais une demande sur la prestation conciergerie des immatriculations</label>
+            </value>
+            <value>
+                <fullName>Je reçois une amende</fullName>
+                <default>false</default>
+                <label>Je reçois une amende</label>
+            </value>
+            <value>
+                <fullName>Je reçois une amende majorée</fullName>
+                <default>false</default>
+                <label>Je reçois une amende majorée</label>
+            </value>
+            <value>
+                <fullName>Je reçois une amende étrangère</fullName>
+                <default>false</default>
+                <label>Je reçois une amende étrangère</label>
+            </value>
+            <value>
+                <fullName>Je souscris à la prestation gestion des amendes</fullName>
+                <default>false</default>
+                <label>Je souscris à la prestation gestion des amendes</label>
+            </value>
+            <value>
+                <fullName>Je fais une demande sur la prestation gestion des amendes</fullName>
+                <default>false</default>
+                <label>Je fais une demande sur la prestation gestion des amendes</label>
+            </value>
+            <value>
+                <fullName>Je souscris à l&#39;assurance tous risques</fullName>
+                <default>false</default>
+                <label>Je souscris à l&#39;assurance tous risques</label>
+            </value>
+            <value>
+                <fullName>Je n&#39;ai pas reçu ma carte verte</fullName>
+                <default>false</default>
+                <label>Je n&#39;ai pas reçu ma carte verte</label>
+            </value>
+            <value>
+                <fullName>Je résilie l&#39;assurance tous risques</fullName>
+                <default>false</default>
+                <label>Je résilie l&#39;assurance tous risques</label>
+            </value>
+            <value>
+                <fullName>Je souscris à la prestation véhicule d&#39;attente</fullName>
+                <default>false</default>
+                <label>Je souscris à la prestation véhicule d&#39;attente</label>
+            </value>
+            <value>
+                <fullName>Je réserve un ou plusieurs véhicules</fullName>
+                <default>false</default>
+                <label>Je réserve un ou plusieurs véhicules</label>
+            </value>
+            <value>
+                <fullName>Je prolonge la location d&#39;un ou plusieurs véhicules</fullName>
+                <default>false</default>
+                <label>Je prolonge la location d&#39;un ou plusieurs véhicules</label>
+            </value>
+            <value>
+                <fullName>Je souhaite obtenir des informations sur ma facture</fullName>
+                <default>false</default>
+                <label>Je souhaite obtenir des informations sur ma facture</label>
+            </value>
+            <value>
+                <fullName>Je souhaite obtenir la TVS des locations</fullName>
+                <default>false</default>
+                <label>Je souhaite obtenir la TVS des locations</label>
+            </value>
+            <value>
+                <fullName>Je souscris à la prestation gestion de parc</fullName>
+                <default>false</default>
+                <label>Je souscris à la prestation gestion de parc</label>
+            </value>
+            <value>
+                <fullName>Je fais une demande sur la prestation gestion de parc</fullName>
+                <default>false</default>
+                <label>Je fais une demande sur la prestation gestion de parc</label>
+            </value>
+            <value>
+                <fullName>Je fais une autre demande</fullName>
+                <default>false</default>
+                <label>Je fais une autre demande</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <valueName>Je souscris à la prestation véhicule d&#39;attente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <valueName>Je réserve un ou plusieurs véhicules</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <valueName>Je prolonge la location d&#39;un ou plusieurs véhicules</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <valueName>Je souhaite obtenir des informations sur ma facture</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <valueName>Je souhaite obtenir la TVS des locations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Véhicule d&#39;attente</controllingFieldValue>
+            <controllingFieldValue>Gestion de Parc</controllingFieldValue>
+            <controllingFieldValue>Carburant</controllingFieldValue>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <controllingFieldValue>Assurances</controllingFieldValue>
+            <valueName>Je fais une autre demande</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gestion de Parc</controllingFieldValue>
+            <valueName>Je souscris à la prestation gestion de parc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gestion de Parc</controllingFieldValue>
+            <valueName>Je fais une demande sur la prestation gestion de parc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avenant</controllingFieldValue>
+            <controllingFieldValue>Modifications contractuelles</controllingFieldValue>
+            <valueName>Durée</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avenant</controllingFieldValue>
+            <controllingFieldValue>Modifications contractuelles</controllingFieldValue>
+            <valueName>Kilométrage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Avenant</controllingFieldValue>
+            <controllingFieldValue>Modifications contractuelles</controllingFieldValue>
+            <valueName>Durée et kilométrage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Carburant</controllingFieldValue>
+            <valueName>Je souscris à la prestation gestion carburant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Carburant</controllingFieldValue>
+            <valueName>Je commande une ou plusieurs cartes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Carburant</controllingFieldValue>
+            <valueName>Je résilie une ou plusieurs cartes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Carburant</controllingFieldValue>
+            <valueName>Je déclare la perte, le vol ou l&#39;utilisation frauduleuse de ma carte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>Je n&#39;ai pas reçu mon certificat d&#39;immatriculation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>Je déclare un changement d&#39;adresse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>Je déclare un changement sur la situation de mon véhicule et/ou de mon entreprise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>J&#39;ai fait l&#39;objet d&#39;une usurpation de plaques</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>Je souscris à la prestation conciergerie des immatriculations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Immatriculation des Véhicules</controllingFieldValue>
+            <valueName>Je fais une demande sur la prestation conciergerie des immatriculations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Modifications contractuelles</controllingFieldValue>
+            <valueName>Prestations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Valeur de rachat/Restitutions</controllingFieldValue>
+            <valueName>Valeur de rachat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Valeur de rachat/Restitutions</controllingFieldValue>
+            <valueName>Restitutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Modifications administratives</controllingFieldValue>
+            <valueName>Adresses</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Modifications administratives</controllingFieldValue>
+            <valueName>RIB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duplicata</controllingFieldValue>
+            <valueName>Factures/Avoirs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duplicata</controllingFieldValue>
+            <valueName>Contrat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duplicata</controllingFieldValue>
+            <valueName>Echéancier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Duplicata</controllingFieldValue>
+            <valueName>Carte grise</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <valueName>Je reçois une amende</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <valueName>Je reçois une amende majorée</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <valueName>Je reçois une amende étrangère</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <valueName>Je souscris à la prestation gestion des amendes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amendes</controllingFieldValue>
+            <valueName>Je fais une demande sur la prestation gestion des amendes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assurances</controllingFieldValue>
+            <valueName>Je souscris à l&#39;assurance tous risques</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assurances</controllingFieldValue>
+            <valueName>Je n&#39;ai pas reçu ma carte verte</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assurances</controllingFieldValue>
+            <valueName>Je résilie l&#39;assurance tous risques</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
