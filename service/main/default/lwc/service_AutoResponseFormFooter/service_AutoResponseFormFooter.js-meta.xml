@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="service_AutoResponseFormFooter">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Service Contact Form Footer</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="legalNotice" type="String" label="Legal Notice" description="Legal Notice" default="Vous bénéficiez d'un droit d'accès à vos données, de droits de rectification et d'effacement de celles-ci, ainsi que de droits de limitation de leur traitement et d'opposition à celui-ci, conformément aux dispositions du Règlement général sur la protection des données (RGPD). Pour exercer ces droits, veuillez adresser un message à Service."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

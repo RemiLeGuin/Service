@@ -1,0 +1,14 @@
+.component-display {
+    max-width: 70em;
+    margin: auto;
+}
+
+.title {
+    color: rgb(0, 174, 239);
+    font-size: 30px;
+    margin-top: 1em;
+}
+
+.max-width {
+    max-width: 18em;
+}

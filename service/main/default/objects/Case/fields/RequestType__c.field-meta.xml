@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RequestType__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <complianceGroup>GDPR</complianceGroup>
+    <description>Service request type.</description>
+    <externalId>false</externalId>
+    <label>Request Type</label>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Modifications contractuelles</fullName>
+                <default>false</default>
+                <label>Modifications contractuelles</label>
+            </value>
+            <value>
+                <fullName>Valeur de rachat/Restitutions</fullName>
+                <default>false</default>
+                <label>Valeur de rachat/Restitutions</label>
+            </value>
+            <value>
+                <fullName>Modifications administratives</fullName>
+                <default>false</default>
+                <label>Modifications administratives</label>
+            </value>
+            <value>
+                <fullName>Changement d’entité</fullName>
+                <default>false</default>
+                <label>Changement d’entité</label>
+            </value>
+            <value>
+                <fullName>Duplicata</fullName>
+                <default>false</default>
+                <label>Duplicata</label>
+            </value>
+            <value>
+                <fullName>Contestation de facture</fullName>
+                <default>false</default>
+                <label>Contestation de facture</label>
+            </value>
+            <value>
+                <fullName>Frais de remise en état</fullName>
+                <default>false</default>
+                <label>Frais de remise en état</label>
+            </value>
+            <value>
+                <fullName>Loyer non arrêté</fullName>
+                <default>false</default>
+                <label>Loyer non arrêté</label>
+            </value>
+            <value>
+                <fullName>Restitution</fullName>
+                <default>false</default>
+                <label>Restitution</label>
+            </value>
+            <value>
+                <fullName>Arrêt de l&#39;assurance</fullName>
+                <default>false</default>
+                <label>Arrêt de l&#39;assurance</label>
+            </value>
+            <value>
+                <fullName>Restitution anticipée</fullName>
+                <default>false</default>
+                <label>Restitution anticipée</label>
+            </value>
+            <value>
+                <fullName>Véhicule à enlever</fullName>
+                <default>false</default>
+                <label>Véhicule à enlever</label>
+            </value>
+            <value>
+                <fullName>Expertise</fullName>
+                <default>false</default>
+                <label>Expertise</label>
+            </value>
+            <value>
+                <fullName>Remise en conformité du véhicule</fullName>
+                <default>false</default>
+                <label>Remise en conformité du véhicule</label>
+            </value>
+            <value>
+                <fullName>Désistement</fullName>
+                <default>false</default>
+                <label>Désistement</label>
+            </value>
+            <value>
+                <fullName>Détail de la facture</fullName>
+                <default>false</default>
+                <label>Détail de la facture</label>
+            </value>
+            <value>
+                <fullName>Montant facturé</fullName>
+                <default>false</default>
+                <label>Montant facturé</label>
+            </value>
+            <value>
+                <fullName>Carburant</fullName>
+                <default>false</default>
+                <label>Carburant</label>
+            </value>
+            <value>
+                <fullName>Immatriculation des Véhicules</fullName>
+                <default>false</default>
+                <label>Immatriculation des Véhicules</label>
+            </value>
+            <value>
+                <fullName>Amendes</fullName>
+                <default>false</default>
+                <label>Amendes</label>
+            </value>
+            <value>
+                <fullName>Assurances</fullName>
+                <default>false</default>
+                <label>Assurances</label>
+            </value>
+            <value>
+                <fullName>Véhicule d&#39;attente</fullName>
+                <default>false</default>
+                <label>Véhicule d&#39;attente</label>
+            </value>
+            <value>
+                <fullName>Gestion de Parc</fullName>
+                <default>false</default>
+                <label>Gestion de Parc</label>
+            </value>
+            <value>
+                <fullName>Tarification</fullName>
+                <default>false</default>
+                <label>Tarification</label>
+            </value>
+            <value>
+                <fullName>Commande</fullName>
+                <default>false</default>
+                <label>Commande</label>
+            </value>
+            <value>
+                <fullName>Avenant</fullName>
+                <default>false</default>
+                <label>Avenant</label>
+            </value>
+            <value>
+                <fullName>Transfert</fullName>
+                <default>false</default>
+                <label>Transfert</label>
+            </value>
+            <value>
+                <fullName>Sinistre</fullName>
+                <default>false</default>
+                <label>Sinistre</label>
+            </value>
+            <value>
+                <fullName>Réclamation</fullName>
+                <default>false</default>
+                <label>Réclamation</label>
+            </value>
+            <value>
+                <fullName>Autres</fullName>
+                <default>false</default>
+                <label>Autres</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

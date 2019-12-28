@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Determines which fields to display in a Service auto-response form.</description>
+    <label>Auto-Response Form Display</label>
+    <pluralLabel>Auto-Response Form Displays</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

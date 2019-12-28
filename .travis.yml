@@ -32,8 +32,10 @@ before_script:
 - export PACKAGEVERSIONTDF="04t1n0000021jWVAAY"
 - export PACKAGENAMETDI="0Ho3X000000KyjQSAS"
 - export PACKAGEVERSIONTDI="04t3X000001FDA6QAO"
+- export PACKAGENAMECOMMUNITIESASSETS="0Ho3X000000KyoHSAS"
+- export PACKAGEVERSIONCOMMUNITIESASSETS="04t3X000001HPzMQAW"
 - export PACKAGENAMECORE="0Ho3X000000KyjVSAS"
-- export PACKAGEVERSIONCORE="04t3X000001FgljQAC"
+- export PACKAGEVERSIONCORE="04t3X000001Hb6cQAC"
 - export PACKAGENAMESERVICE="0Ho3X000000KyjaSAC"
 - export PACKAGEVERSIONSERVICE=""
 #outputs CLI version
@@ -53,6 +55,7 @@ script:
 - sfdx force:package:install --package $PACKAGEVERSIONTDF --wait 10 --publishwait 10 --targetusername ciorg
 - sfdx force:package:install --package $PACKAGEVERSIONTDI --installationkey TriggerDependencyInjection
   --wait 10 --publishwait 10 --targetusername ciorg
+- sfdx force:package:install --package $PACKAGEVERSIONCOMMUNITIESASSETS --wait 10 --publishwait 10 --targetusername ciorg
 - sfdx force:package:install --package $PACKAGEVERSIONCORE --installationkey Core2019 --wait 10 --publishwait 10 --targetusername ciorg
 #Pushes source to scratch org
 - sfdx force:source:push --targetusername ciorg
@@ -69,5 +72,7 @@ script:
 #Installs package in target org
 - sfdx force:package:install --package $PACKAGEVERSIONSERVICE --installationkey Service2019
   --publishwait 10 --wait 10 --targetusername Service
+#Deploys metadata uncovered by unlocked packages
+- sfdx force:source:deploy --manifest manifest/package.xml --wait 10 --testlevel NoTestRun --targetusername Service
 #Runs unit tests on target org
 - sfdx force:apex:test:run --targetusername Service --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL

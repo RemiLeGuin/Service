@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="service_AutoResponseForm">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Service Contact Form</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Record ID" description="Automatically bind the page's record ID to the component variable" default="{!recordId}"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -5,12 +5,34 @@
         <name>AutoResponseRules</name>
     </types>
     <types>
+        <members>Form</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
+        <members>Form</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>cbForm</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
+        <members>Form Profile</members>
         <members>Service</members>
         <name>Profile</name>
     </types>
     <types>
         <members>Case.Service_CasesReadOnly</members>
+        <members>Case.Service_CasesReadOnlyToGuestUsers</members>
         <name>SharingCriteriaRule</name>
+    </types>
+    <types>
+        <members>Form1</members>
+        <name>SiteDotCom</name>
     </types>
     <version>47.0</version>
 </Package>
