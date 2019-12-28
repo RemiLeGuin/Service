@@ -27,6 +27,7 @@
     </types>
     <types>
         <members>Case.Service_CasesReadOnly</members>
+        <members>Case.Service_CasesReadOnlyToGuestUsers</members>
         <name>SharingCriteriaRule</name>
     </types>
     <types>
