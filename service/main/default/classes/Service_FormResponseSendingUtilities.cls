@@ -1,7 +1,7 @@
 /**
  * @author Rémi Le Guin
  * @date 10/10/2019
- * @description Utility class for the Form Response Sending custom metadata whithin the Service package.
+ * @description Utility class for the Form Response Sending custom metadata within the Service package.
  */
 public with sharing class Service_FormResponseSendingUtilities {
 

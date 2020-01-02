@@ -21,7 +21,7 @@ public with sharing class Service_FormResponseSendingHandler implements Callable
                         || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_RESTITUTIONS
                         || cs.RecordTypeId == Service_CaseUtilities.RECORDTYPEID_SERVICES)) {
                     String caseQueueDeveloperName = Service_CaseUtilities.SERVICEQUEUEDEVELOPERNAMESBYID.get(cs.OwnerId);
-                    if (!String.isBlank(caseQueueDeveloperName)) {
+                    if (String.isNotBlank(caseQueueDeveloperName)) {
                         Boolean sendForm = Service_FormResponseSendingUtilities.SENDFORMSBYQUEUE.get(caseQueueDeveloperName);
                         if (sendForm != null) {
                             cs.SendForm__c = sendForm;
