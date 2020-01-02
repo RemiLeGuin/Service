@@ -4,15 +4,15 @@
             "path": "service",
             "default": true,
             "package": "Service",
-            "versionName": "ver 0.3",
-            "versionNumber": "0.3.0.NEXT",
+            "versionName": "ver 0.4",
+            "versionNumber": "0.4.0.NEXT",
             "dependencies": [
                 {
                     "package": "TDF"
                 },
                 {
                     "package": "Trigger Dependency Injection (TDI)",
-                    "versionNumber": "1.0.0.LATEST"
+                    "versionNumber": "1.1.0.LATEST"
                 },
                 {
                     "package": "Communities Assets",
@@ -20,7 +20,7 @@
                 },
                 {
                     "package": "Core",
-                    "versionNumber": "0.3.0.LATEST"
+                    "versionNumber": "0.4.0.LATEST"
                 }
             ]
         },
@@ -33,7 +33,7 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "47.0",
     "packageAliases": {
-        "TDF": "04t1n0000021jWVAAY",
+        "TDF": "04t1n000001YV7nAAG",
         "Trigger Dependency Injection (TDI)": "0Ho3X000000KyjQSAS",
         "Communities Assets": "0Ho3X000000KyoHSAS",
         "Core": "0Ho3X000000KyjVSAS",
