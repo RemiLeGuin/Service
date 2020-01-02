@@ -1,7 +1,7 @@
 /**
  * @author Rémi Le Guin
  * @date 16/10/2019
- * @description Test class for the utility class for the Form Response Sending custom metadata whithin the Service package.
+ * @description Test class for the utility class for the Form Response Sending custom metadata within the Service package.
  */
 @IsTest
 private class Service_FormResponseSendingUtilities_Tes {

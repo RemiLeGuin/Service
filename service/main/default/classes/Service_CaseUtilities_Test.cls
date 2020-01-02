@@ -1,7 +1,7 @@
 /**
  * @author Rémi Le Guin
  * @date 10/10/2019
- * @description Test class for the utility class for the Case standard object whithin the Service package.
+ * @description Test class for the utility class for the Case standard object within the Service package.
  */
 @IsTest
 private class Service_CaseUtilities_Test {

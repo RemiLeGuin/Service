@@ -1,7 +1,7 @@
 /**
  * @author Rémi Le Guin
  * @date 16/10/2019
- * @description Test class for the handler class for the form response sending on case creation whithin the Service package.
+ * @description Test class for the handler class for the form response sending on case creation.
  */
 @IsTest
 private class Service_FormResponseSendingHandler_Test {
