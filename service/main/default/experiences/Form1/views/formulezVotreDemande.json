@@ -1,0 +1,122 @@
+{
+  "appPageId" : "9974611f-78c0-4f7a-b767-365a1f7de78b",
+  "componentName" : "siteforce:dynamicLayout",
+  "id" : "4ff366a7-b0cf-482c-8f68-6d6ccce60766",
+  "label" : "Formulez votre demande",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgb(255,255,255)",
+        "backgroundOverlay" : "rgba(255,255,255,0.7)",
+        "contentAreaWidth" : "66",
+        "sectionConfig" : "{\"UUID\":\"6d342616-715e-405d-8cd1-913fcfd9d636\",\"columns\":[{\"UUID\":\"cc9f922f-3352-4f03-a716-20eff61c323b\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "100"
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "6d342616-715e-405d-8cd1-913fcfd9d636",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "image" : "",
+            "title" : "FORMULEZ VOTRE DEMANDE"
+          },
+          "componentName" : "c:service_AutoResponseFormHeader",
+          "id" : "bd643f43-12c0-4535-ad7c-a7de97ee22ea",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "cc9f922f-3352-4f03-a716-20eff61c323b",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgb(255,255,255)",
+        "backgroundOverlay" : "rgba(255,255,255,0.7)",
+        "contentAreaWidth" : "66",
+        "sectionConfig" : "{\"UUID\":\"4212d320-e19f-4964-9b33-fc1af1f54c10\",\"columns\":[{\"UUID\":\"2304cff8-a10e-46d5-90d6-09dcadaa220c\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "100"
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "4212d320-e19f-4964-9b33-fc1af1f54c10",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "c:service_AutoResponseForm",
+          "id" : "b13e8af5-93e4-4b1e-8660-7a81783357bf",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "2304cff8-a10e-46d5-90d6-09dcadaa220c",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgb(255,255,255)",
+        "backgroundOverlay" : "rgba(255,255,255,0.7)",
+        "contentAreaWidth" : "66",
+        "sectionConfig" : "{\"UUID\":\"2d2258c0-4179-4433-92f1-3c7bf59dc7e4\",\"columns\":[{\"UUID\":\"4b36e814-e0e4-47b4-9cba-dfe18b3859da\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "100"
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "2d2258c0-4179-4433-92f1-3c7bf59dc7e4",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "legalNotice" : "Vous bénéficiez d'un droit d'accès à vos données, de droits de rectification et d'effacement de celles-ci, ainsi que de droits de limitation de leur traitement et d'opposition à celui-ci, conformément aux dispositions du Règlement général sur la protection des données (RGPD). Pour exercer ces droits, veuillez adresser un message à Service."
+          },
+          "componentName" : "c:service_AutoResponseFormFooter",
+          "id" : "5044871f-a9db-4dc0-a38b-7b024708f79d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "4b36e814-e0e4-47b4-9cba-dfe18b3859da",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "efcf7a59-e80c-4591-b8a4-35aa430efb76",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Formulez votre demande"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e167ee81-f47f-4195-b5cf-de1437bc7132",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "dc34cc1b-b8cf-4bdf-a812-3f6677b8ae35",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-formulez-votre-demande"
+}

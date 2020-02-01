@@ -7,11 +7,14 @@
         "communitiesSettings": {
             "enableNetworksEnabled": true
         },
-        "sharingSettings": {
-            "enableSecureGuestAccess": true
+        "experienceBundleSettings": {
+            "enableExperienceBundleMetadata": true
         },
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true
+        },
+        "sharingSettings": {
+            "enableSecureGuestAccess": true
         },
         "userManagementSettings": {
             "enableNewProfileUI": true
