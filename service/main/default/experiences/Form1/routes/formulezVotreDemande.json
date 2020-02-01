@@ -1,9 +1,0 @@
-{
-  "appPageId" : "9974611f-78c0-4f7a-b767-365a1f7de78b",
-  "id" : "d64e00d1-59bf-45ba-964c-f9837ff6f82b",
-  "label" : "Formulez votre demande",
-  "pageAccess" : "Public",
-  "routeType" : "custom-formulez-votre-demande",
-  "type" : "route",
-  "urlPrefix" : "formulez-votre-demande"
-}

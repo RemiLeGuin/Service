@@ -1,0 +1,9 @@
+{
+  "appPageId" : "d6c2b6a0-eb00-47fe-9721-432975119ae3",
+  "id" : "91b01e5c-9975-4c1f-9bbb-377521abdb85",
+  "label" : "Formulez votre demande",
+  "pageAccess" : "Public",
+  "routeType" : "custom-formulez-votre-demande",
+  "type" : "route",
+  "urlPrefix" : "formulez-votre-demande"
+}

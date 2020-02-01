@@ -1,9 +1,0 @@
-{
-  "appPageId" : "9974611f-78c0-4f7a-b767-365a1f7de78b",
-  "id" : "df5dd046-3280-4ed0-99e3-217b43f4dbb2",
-  "label" : "Search",
-  "pageAccess" : "UseParent",
-  "routeType" : "global-search",
-  "type" : "route",
-  "urlPrefix" : "global-search"
-}

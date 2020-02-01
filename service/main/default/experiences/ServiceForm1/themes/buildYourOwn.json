@@ -1,0 +1,97 @@
+{
+  "activeBrandingSetId" : "600e2dcc-3175-4afb-b706-d7f79d9ac261",
+  "customCSS" : "@font-face {\n    font-family: 'Gotham Rounded Bold';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Bold.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Bold Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-BoldItalic.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Book';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Book.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Light';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Light.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Light Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-LightItalic.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Medium';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Medium.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Medium Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-MediumItalic.woff') format('woff');\n}\n\n.slds-has-error .slds-input {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.slds-required {\n    color: rgb(235,20,140) !important;\n}\n\n.slds-form-element__help {\n    color: rgb(235,20,140) !important;\n}\n\n.slds-has-error .slds-textarea {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.slds-has-error .slds-select {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.help-font-color {\n    color: rgb(235,20,140) !important;\n}\n\n.error-frame {\n    background: rgb(235,20,140) !important;\n}\n\n.legal-notice-text {\n    font-family: 'Gotham Rounded Light';\n}",
+  "developerName" : "starter",
+  "id" : "d8274796-0dcc-4b26-822c-a0609d33bd8e",
+  "label" : "Build Your Own",
+  "layouts" : {
+    "Inner" : "e1b11e9b-b217-48d4-9bb5-f902669d42a1",
+    "Login" : "0093d670-1297-4b13-a15e-bd09aa7ae05e"
+  },
+  "type" : "theme",
+  "views" : [ {
+    "componentName" : "salesforceIdentity:loginBody2",
+    "id" : "0093d670-1297-4b13-a15e-bd09aa7ae05e",
+    "label" : "Login",
+    "regions" : [ {
+      "id" : "d23fd482-e454-4984-a604-2a74764ba4af",
+      "regionName" : "header",
+      "type" : "region"
+    }, {
+      "id" : "a581fffa-db80-4adc-9ef7-6106323ea8d5",
+      "regionName" : "content",
+      "type" : "region"
+    }, {
+      "id" : "1d41b500-b2d9-4635-b61f-440b6202438e",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentName" : "siteforce:starterBody",
+    "id" : "e1b11e9b-b217-48d4-9bb5-f902669d42a1",
+    "label" : "Default",
+    "regions" : [ {
+      "components" : [ {
+        "componentAttributes" : {
+          "maxAutoCompleteResults" : "5",
+          "searchLabel" : "Search...",
+          "searchObjects" : "[{\"name\":\"Account\", \"isPublic\":true}]"
+        },
+        "componentName" : "forceCommunity:globalSearchInput",
+        "id" : "83792c43-74db-42cb-b091-ea78fb530ebc",
+        "renderPriority" : "NEUTRAL",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "254972ba-0189-4504-b98e-ff97580f364a",
+      "regionName" : "search",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "accountManagementLabel" : "Account Management",
+          "communityBuilderLabel" : "Community Builder",
+          "communitySetupLabel" : "Community Setup",
+          "contactSupportLabel" : "Contact Support",
+          "filterName" : "MyCases",
+          "homeLabel" : "Home",
+          "includeContactSupport" : "true",
+          "includeMessages" : "false",
+          "loginLabel" : "Login",
+          "logoutLabel" : "Logout",
+          "myAccountLabel" : "My Account",
+          "showAccountManagement" : "false",
+          "showUserSettings" : "true",
+          "userSettingsLabel" : "My Settings",
+          "viewProfileLabel" : "My Profile"
+        },
+        "componentName" : "selfService:userProfileMenu",
+        "id" : "5f4163ed-4050-4a5c-972c-5080947a2070",
+        "renderPriority" : "NEUTRAL",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "20f1b0d1-86ba-43b4-9585-517f044ccc2a",
+      "regionName" : "profileMenu",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "NavigationMenuEditorRefresh" : "",
+          "hideAppLauncher" : "true",
+          "hideHomeText" : "true"
+        },
+        "componentName" : "forceCommunity:globalNavigation",
+        "id" : "1f5f35b3-c89d-432e-b29d-f38d5349f5bf",
+        "renderPriority" : "NEUTRAL",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "b2322cff-ea81-4b78-b560-76fc2d96467a",
+      "regionName" : "navBar",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  } ]
+}
