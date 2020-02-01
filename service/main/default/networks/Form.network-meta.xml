@@ -5,7 +5,7 @@
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
     <communityRoles/>
     <description>Community hosting the form sent to Service customers in order to qualify their request.</description>
-    <disableReputationRecordConversations>false</disableReputationRecordConversations>
+    <disableReputationRecordConversations>true</disableReputationRecordConversations>
     <emailSenderAddress>remileguin@live.fr</emailSenderAddress>
     <emailSenderName>Form</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
