@@ -26,4 +26,5 @@
     <siteAdmin>remileguin@resourceful-shark-p1czo9.com</siteAdmin>
     <siteType>ChatterNetwork</siteType>
     <subdomain>serviceform</subdomain>
+    <urlPathPrefix>form</urlPathPrefix>
 </CustomSite>

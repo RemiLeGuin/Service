@@ -1,10 +1,10 @@
 {
-  "appPageId" : "9974611f-78c0-4f7a-b767-365a1f7de78b",
+  "appPageId" : "9568c242-7419-40dd-bbaa-0332dcf7851f",
   "componentName" : "siteforce:sldsOneColLayout",
-  "id" : "f0698fba-b874-4938-b83d-c38a55f69a4b",
+  "id" : "05b59edf-74d7-4b65-a7d7-400d6452c578",
   "label" : "Home",
   "regions" : [ {
-    "id" : "957ad697-2d5c-40e9-9f34-a47e26e06892",
+    "id" : "5630d039-46c7-433a-abe2-238e4dbeb37c",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -13,16 +13,16 @@
         "richTextValue" : "<div>     <p><span style='font-size: 48px;'>Let's get started!</span></p>     <ol>         <li><span style='font-size: 18px;'>Unfamiliar with Build Your Own? Click Take a Tour in the Help menu.</span></li>         <li><span style='font-size: 18px;'>Want to add more pages? Take a look at the Pages menu.</span></li>         <li><span style='font-size: 18px;'>Want more components on your page? Drag and drop components from the Components panel.</span></li>         <li><span style='font-size: 18px;'>Want your users to see your company logo? Head on over to the Branding panel.</span></li>         <li><span style='font-size: 18px;'>Refine the look of your community with a custom theme layout. See the Lightning Communities Developer Guide.</span></li>     </ol> </div>"
       },
       "componentName" : "forceCommunity:richTextInline",
-      "id" : "b0f507dc-039e-4cab-a28d-2b1ecb10ce7b",
+      "id" : "485fab4b-5cb0-4dff-ae7c-697ee9707a9d",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "826d374d-3b19-4591-aa49-e6e016b5c0fe",
+    "id" : "4487a81b-2a91-4ac9-a48f-728ed099bd25",
     "regionName" : "content",
     "type" : "region"
   }, {
-    "id" : "d3683a2a-d2c2-42be-8140-6073cd52bb92",
+    "id" : "338f9e25-000b-48b6-93a6-e35128c2e566",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -33,12 +33,12 @@
         "title" : "Home"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "aac65833-b4d4-4ea4-a52f-d15b1c372005",
+      "id" : "336cf3a2-5d39-4624-90d9-6ab73b491fc1",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "c1c3cfcf-7a20-422d-a2e4-3b317ddf00ab",
+    "id" : "c4011796-02dd-4702-9b28-24b63f01c551",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

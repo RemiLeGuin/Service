@@ -1,35 +1,35 @@
 {
-  "activeBrandingSetId" : "dd83ad8b-be47-4b16-ad91-7a376709af6d",
+  "activeBrandingSetId" : "fda67d22-4c6d-46f2-b8f7-8eb69954fab4",
   "customCSS" : "@font-face {\n    font-family: 'Gotham Rounded Bold';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Bold.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Bold Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-BoldItalic.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Book';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Book.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Light';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Light.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Light Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-LightItalic.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Medium';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-Medium.woff') format('woff');\n}\n\n@font-face {\n    font-family: 'Gotham Rounded Medium Italic';\n    src: url('/s/sfsites/c/resource/Service_GothamRoundedFont/GothamRounded-MediumItalic.woff') format('woff');\n}\n\n.slds-has-error .slds-input {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.slds-required {\n    color: rgb(235,20,140) !important;\n}\n\n.slds-form-element__help {\n    color: rgb(235,20,140) !important;\n}\n\n.slds-has-error .slds-textarea {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.slds-has-error .slds-select {\n    background-color: rgb(254, 253, 160) !important;\n    border: 1px solid #d4d4d4 !important;\n    border-color: #d4d4d4 !important;\n    box-shadow: white 0 0 0 0 inset !important;\n}\n\n.help-font-color {\n    color: rgb(235,20,140) !important;\n}\n\n.error-frame {\n    background: rgb(235,20,140) !important;\n}\n\n.legal-notice-text {\n    font-family: 'Gotham Rounded Light';\n}",
   "developerName" : "starter",
-  "id" : "07bab739-66f2-4f45-8b01-b6f328916228",
+  "id" : "c17e74e2-5912-4c5a-b756-9a9b4bdb9413",
   "label" : "Build Your Own",
   "layouts" : {
-    "Inner" : "6a3b14c3-c900-43bc-84b8-580b2e425ee8",
-    "Login" : "3fd1fded-15e7-479e-8f9f-3f144741df8b"
+    "Inner" : "22eafae8-04a4-4c0d-909e-5d7f4e0f445e",
+    "Login" : "7b9282dc-c6b9-4c64-bb71-557ff9c64381"
   },
   "type" : "theme",
   "views" : [ {
     "componentName" : "salesforceIdentity:loginBody2",
-    "id" : "3fd1fded-15e7-479e-8f9f-3f144741df8b",
+    "id" : "7b9282dc-c6b9-4c64-bb71-557ff9c64381",
     "label" : "Login",
     "regions" : [ {
-      "id" : "38a8f98a-46dc-4feb-975c-5c0886548608",
+      "id" : "d7cae61b-310c-4e8d-91d3-130a51049442",
       "regionName" : "header",
       "type" : "region"
     }, {
-      "id" : "a1e991c5-c265-4898-a6f7-8097d6525f50",
+      "id" : "642853f7-6dfe-42dc-a867-8c0546cd68f1",
       "regionName" : "content",
       "type" : "region"
     }, {
-      "id" : "40fa6222-7189-4a44-acb0-0464859cd28c",
+      "id" : "26b3ca29-772b-4693-ad31-a7818fbbb268",
       "regionName" : "footer",
       "type" : "region"
     } ],
     "type" : "view"
   }, {
     "componentName" : "siteforce:starterBody",
-    "id" : "6a3b14c3-c900-43bc-84b8-580b2e425ee8",
+    "id" : "22eafae8-04a4-4c0d-909e-5d7f4e0f445e",
     "label" : "Default",
     "regions" : [ {
       "components" : [ {
@@ -39,12 +39,12 @@
           "searchObjects" : "[{\"name\":\"Account\", \"isPublic\":true}]"
         },
         "componentName" : "forceCommunity:globalSearchInput",
-        "id" : "76292797-b567-47bc-ab47-04e6e9dc3a00",
+        "id" : "d9d8da1b-44e3-44b9-9c87-d8c8cd77aa0a",
         "renderPriority" : "NEUTRAL",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "7c956eb4-b910-470b-945e-0112877b7197",
+      "id" : "be7369c2-e936-4a59-86e5-25b4acac3de3",
       "regionName" : "search",
       "type" : "region"
     }, {
@@ -67,12 +67,12 @@
           "viewProfileLabel" : "My Profile"
         },
         "componentName" : "selfService:userProfileMenu",
-        "id" : "c872d951-a4e2-47fd-b53c-4a9922aee4f6",
+        "id" : "fa6e4831-87c0-43bd-84c6-853e87229c6d",
         "renderPriority" : "NEUTRAL",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "584f2edd-d411-484d-8d19-8945a1d5daeb",
+      "id" : "24d6aa90-df40-4439-9b34-9cb8be0d3189",
       "regionName" : "profileMenu",
       "type" : "region"
     }, {
@@ -83,12 +83,12 @@
           "hideHomeText" : "true"
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "3305af0a-64b5-4f11-9351-9e29055dd54c",
+        "id" : "a1dbb31c-c188-4bcf-a78d-6599f1871bb0",
         "renderPriority" : "NEUTRAL",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "0919cca6-fac8-4558-9719-8c9421f27cef",
+      "id" : "4c0b32f7-f36e-4902-96ab-c41ff2a84160",
       "regionName" : "navBar",
       "type" : "region"
     } ],

@@ -2,7 +2,7 @@
     "orgName": "Service",
     "edition": "Developer",
     "language": "en_US",
-    "features": ["Communities", "LightningServiceConsole", "ServiceCloud", "Sites", "SiteDotCom"],
+    "features": ["Communities", "LightningServiceConsole", "ServiceCloud"],
     "settings": {
         "communitiesSettings": {
             "enableNetworksEnabled": true

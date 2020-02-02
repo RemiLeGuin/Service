@@ -1,19 +1,19 @@
 {
-  "appPageId" : "9974611f-78c0-4f7a-b767-365a1f7de78b",
+  "appPageId" : "9568c242-7419-40dd-bbaa-0332dcf7851f",
   "componentName" : "siteforce:dynamicLayout",
-  "id" : "4ff366a7-b0cf-482c-8f68-6d6ccce60766",
+  "id" : "35c4dd3a-6c85-4104-a950-a35315b94cb9",
   "label" : "Formulez votre demande",
   "regions" : [ {
     "components" : [ {
       "componentAttributes" : {
         "background" : "background: rgb(255,255,255)",
         "backgroundOverlay" : "rgba(255,255,255,0.7)",
-        "contentAreaWidth" : "66",
-        "sectionConfig" : "{\"UUID\":\"6d342616-715e-405d-8cd1-913fcfd9d636\",\"columns\":[{\"UUID\":\"cc9f922f-3352-4f03-a716-20eff61c323b\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
-        "sectionHeight" : "100"
+        "contentAreaWidth" : "67",
+        "sectionConfig" : "{\"UUID\":\"9c10022d-ca00-424f-aae5-627b3fa4c633\",\"columns\":[{\"UUID\":\"76df8a40-851e-42e5-b947-9ff764a667e1\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "32"
       },
       "componentName" : "forceCommunity:section",
-      "id" : "6d342616-715e-405d-8cd1-913fcfd9d636",
+      "id" : "9c10022d-ca00-424f-aae5-627b3fa4c633",
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
@@ -21,12 +21,12 @@
             "title" : "FORMULEZ VOTRE DEMANDE"
           },
           "componentName" : "c:service_AutoResponseFormHeader",
-          "id" : "bd643f43-12c0-4535-ad7c-a7de97ee22ea",
+          "id" : "6d2b2edf-a9f5-4470-9e79-241359842d9d",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "cc9f922f-3352-4f03-a716-20eff61c323b",
+        "id" : "76df8a40-851e-42e5-b947-9ff764a667e1",
         "regionLabel" : "Column 1",
         "regionName" : "1",
         "renditionMap" : { },
@@ -39,24 +39,24 @@
       "componentAttributes" : {
         "background" : "background: rgb(255,255,255)",
         "backgroundOverlay" : "rgba(255,255,255,0.7)",
-        "contentAreaWidth" : "66",
-        "sectionConfig" : "{\"UUID\":\"4212d320-e19f-4964-9b33-fc1af1f54c10\",\"columns\":[{\"UUID\":\"2304cff8-a10e-46d5-90d6-09dcadaa220c\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
-        "sectionHeight" : "100"
+        "contentAreaWidth" : "67",
+        "sectionConfig" : "{\"UUID\":\"74f6105f-e1e6-4c39-8eea-a4af37564d6e\",\"columns\":[{\"UUID\":\"dea790a5-d0e9-4bdf-bf0e-5b35d3cddef0\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "32"
       },
       "componentName" : "forceCommunity:section",
-      "id" : "4212d320-e19f-4964-9b33-fc1af1f54c10",
+      "id" : "74f6105f-e1e6-4c39-8eea-a4af37564d6e",
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
             "recordId" : "{!recordId}"
           },
           "componentName" : "c:service_AutoResponseForm",
-          "id" : "b13e8af5-93e4-4b1e-8660-7a81783357bf",
+          "id" : "f209728a-c29f-413e-ae03-fe3a406894a7",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "2304cff8-a10e-46d5-90d6-09dcadaa220c",
+        "id" : "dea790a5-d0e9-4bdf-bf0e-5b35d3cddef0",
         "regionLabel" : "Column 1",
         "regionName" : "1",
         "renditionMap" : { },
@@ -69,24 +69,24 @@
       "componentAttributes" : {
         "background" : "background: rgb(255,255,255)",
         "backgroundOverlay" : "rgba(255,255,255,0.7)",
-        "contentAreaWidth" : "66",
-        "sectionConfig" : "{\"UUID\":\"2d2258c0-4179-4433-92f1-3c7bf59dc7e4\",\"columns\":[{\"UUID\":\"4b36e814-e0e4-47b4-9cba-dfe18b3859da\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
-        "sectionHeight" : "100"
+        "contentAreaWidth" : "67",
+        "sectionConfig" : "{\"UUID\":\"712ab8bf-7f68-4da4-b42b-a8306429b0d6\",\"columns\":[{\"UUID\":\"812af74d-d292-4426-98f4-7bb11abd8107\",\"columnName\":\"Column 1\",\"columnKey\":\"1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+        "sectionHeight" : "32"
       },
       "componentName" : "forceCommunity:section",
-      "id" : "2d2258c0-4179-4433-92f1-3c7bf59dc7e4",
+      "id" : "712ab8bf-7f68-4da4-b42b-a8306429b0d6",
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
             "legalNotice" : "Vous bénéficiez d'un droit d'accès à vos données, de droits de rectification et d'effacement de celles-ci, ainsi que de droits de limitation de leur traitement et d'opposition à celui-ci, conformément aux dispositions du Règlement général sur la protection des données (RGPD). Pour exercer ces droits, veuillez adresser un message à Service."
           },
           "componentName" : "c:service_AutoResponseFormFooter",
-          "id" : "5044871f-a9db-4dc0-a38b-7b024708f79d",
+          "id" : "043bc069-47b6-4968-99ba-1e350b897753",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "4b36e814-e0e4-47b4-9cba-dfe18b3859da",
+        "id" : "812af74d-d292-4426-98f4-7bb11abd8107",
         "regionLabel" : "Column 1",
         "regionName" : "1",
         "renditionMap" : { },
@@ -96,7 +96,7 @@
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "efcf7a59-e80c-4591-b8a4-35aa430efb76",
+    "id" : "aa6a3dc2-a709-4082-a88a-647eeaebda06",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -107,12 +107,12 @@
         "title" : "Formulez votre demande"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "e167ee81-f47f-4195-b5cf-de1437bc7132",
+      "id" : "295600ea-595a-4d12-a732-951052cac7da",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "dc34cc1b-b8cf-4bdf-a812-3f6677b8ae35",
+    "id" : "0f47064f-f96b-4b2c-a2ea-5e839ee4c103",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
